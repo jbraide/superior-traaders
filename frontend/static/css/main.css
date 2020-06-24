@@ -1,0 +1,131 @@
+body {
+    background-color: #202040;
+    color: white;
+    /* background-color: #003545; */
+}
+
+/* top header */
+.top-header{
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+
+
+/* banner */
+/* background image for banner */
+img.d-block.w-100 {
+    height: 519px;
+}
+
+/* about section */
+
+.about-section{
+    clear: both;
+}
+.about-left {
+    background-color: #ffe;
+    width: 50%;
+    float: left;
+    clear: right;
+    padding: 8% 0;
+}
+
+.about-left > img {
+    width: 70%;
+    margin-left: 12%;
+}
+
+.about-right{
+    width: 50%;
+    float: right;
+    padding: 0 5%;
+    padding-top: 15%;
+}
+.about-right > p {
+    margin-top: 9%;
+}
+
+/* plans */
+.plans{
+    clear: both;
+    background-color: #602080;
+    padding: 5% 0
+}
+
+.plan-body {
+    background-color:#b030b0;
+    -webkit-box-shadow: 21px 26px 24px 3px rgba(0,0,0,0.44);
+    -moz-box-shadow: 21px 26px 24px 3px rgba(0,0,0,0.44);
+    box-shadow: 21px 26px 24px 3px rgba(0,0,0,0.44);
+    padding: 16% 0;
+}
+
+.plan-header {
+    font-size: 240%;
+    margin-bottom: 5%;
+    text-transform: uppercase;    
+} 
+
+
+.plan-header-inner {
+    font-size: 170%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.plan-amount {
+    font-size: 160%;
+    margin: 12% 0;
+    margin-top: 15%;
+}
+
+.plan-body > p {
+    font-size: 80%;
+    font-weight: 4z00;
+}
+
+/* crypto & support section */
+.btc-sect{
+    float: left;
+    /* clear: right; */
+    width: 50%;
+    padding-left: 3%;
+}
+
+.btc-sect > h2 {
+    margin: 5% 0;
+    text-transform: uppercase
+}
+
+
+
+#support-section {
+    float: right;
+    background: linear-gradient(321deg, #222  50%, #000 50% );
+    width: 50%;
+    height: 545px;
+    padding-top: 13%;
+    /* padding-left: 19%; */
+}
+
+#support-section > h3 {
+    font-size: 220%;
+}
+
+
+/* footer */
+footer{
+    clear: both;
+}
+#about-footer > a  {
+    display: block;
+}
+
+
+#copyright {
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    padding-top: 2%;
+}
