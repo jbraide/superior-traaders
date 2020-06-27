@@ -329,6 +329,12 @@ section>span {
     clear: right;
 }
 
+#account-balance>h5,
+#invested>h5,
+#account-type>h5 {
+    font-size: 115%;
+}
+
 #account-balance {
     background-color: #3c6562;
 }
@@ -374,8 +380,20 @@ hr {
     padding: 4%;
 }
 
+#notification-header {
+    color: white;
+    font-size: 150%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 4% 0;
+}
+
 .notification-body {
     margin: 2%
+}
+
+.notification-amount {
+    padding-left: 9%;
 }
 
 .success {
@@ -386,8 +404,76 @@ hr {
     color: #F54F52;
 }
 
-#account-balance>h5,
-#invested>h5,
-#account-type>h5 {
-    font-size: 115%;
+
+/* account settings */
+
+.account-settings {
+    background: url('../images/architecture-buildings-business-city-290595.jpg');
+    width: 100%;
+    height: 170px;
+}
+
+.img-white-background {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    float: left;
+    clear: right;
+    margin: 3%;
+}
+
+#settings-account-type {
+    color: white;
+    background: black;
+    font-weight: 600;
+    padding: 8% 11%;
+}
+
+#account-name-title {
+    float: left;
+    margin-top: 4.5%;
+}
+
+#setting-navigation {
+    background-color: white;
+}
+
+.profile-detail-box {
+    background-color: white;
+    height: 50px;
+    color: black;
+    padding: 3%;
+    margin-bottom: 5%;
+}
+
+.profile-title {
+    background-color: #70C869;
+    padding: 10%;
+}
+
+.profile-name {
+    font-size: 110%;
+    /* text-transform: uppercase; */
+}
+
+#account-section {
+    margin: 3% 0;
+}
+
+
+/* password */
+
+#change-password-header {
+    background-color: white;
+    width: 100%;
+    color: black;
+    height: 40px;
+    padding-left: 3%;
+    padding-top: 2%;
+    margin-top: 3%;
+}
+
+#change-password-header>span {
+    font-size: 110%;
+    font-weight: bold;
 }

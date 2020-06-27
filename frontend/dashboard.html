@@ -160,22 +160,22 @@
             </div>
             <div id="notification-section">
                 <div class="container">
-                    <h3>Notifications</h3>
+                    <h3 id="notification-header">Notifications</h3>
                     <div class="row">
                         <div class="col-lg-7">
                             <div id="notification-main">
                                 <div class="row">
                                     <!-- header -->
                                     <div class="col-sm-2">
-                                        <h5> Status</h5>
+                                        <h6> Status</h6>
                                     </div>
                                     <div class="col-sm-7">
-                                        <h5> Details</h5>
+                                        <h6> Details</h6>
 
                                     </div>
 
                                     <div class="col-sm-3">
-                                        <h5>Amount</h5>
+                                        <h6>Amount</h6>
                                     </div>
 
                                     <!-- notification body -->
@@ -189,8 +189,8 @@
                                                 </span>
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <span>- $ 50</span>
+                                        <div class="col-sm-3 notification-amount">
+                                            <span>$ 50</span>
                                         </div>
                                     </div>
 
@@ -200,12 +200,12 @@
                                         </div>
                                         <div class="col-sm-7">
                                             <span>
-                                                A Deposit of $ 50 has been made to your Account.
+                                                A withdrawal of $ 50 has been made to your Account.
                                                 </span>
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <span>- $ 50</span>
+                                        <div class="col-sm-3 notification-amount">
+                                            <span>$ 50</span>
                                         </div>
                                     </div>
 
@@ -218,11 +218,10 @@
                             <!-- TradingView Widget BEGIN -->
                             <div class="tradingview-widget-container">
                                 <div class="tradingview-widget-container__widget"></div>
-                                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/forex-screener/" rel="noopener" target="_blank"><span class="blue-text">Forex Screener</span></a> by TradingView</div>
                                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
                                     {
                                         "width": 400,
-                                        "height": 600,
+                                        "height": 400,
                                         "defaultColumn": "overview",
                                         "defaultScreen": "general",
                                         "market": "forex",
