@@ -25,7 +25,7 @@ SECRET_KEY = '6o0$1_k)3z4eybj62#feg9k%w)iog!lia9e_otwkp@cobvr#by'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['superior-traders.com', '161.35.67.201', 'localhost']
 
 
 # Application definition
