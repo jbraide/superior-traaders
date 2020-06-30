@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+{% block body %}
+{% load static %}
+{% load widget_tweaks %}
+<div id="login-main-background">
+        <div id="login-form-area">
+            <div id="login-img">
+            </div>
+            <div id="login-form">
+                <h3 class="text-center">Registration</h3>
+                <div class="container">
+                    <form class="form-group" method='post'>
+                        <div class="row">
+                            {% for field in form.visible_fields %}
+                            {% csrf_token %}
+                            <div class="col-lg-6">
+                                <p>
+                                    {% for error in field.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                <br> 
+                                {% comment %} {{ field.first_name|add_class: 'form-control' }}                                {% endcomment %}
+                                <label for="{{ field.id_for_label }}">{{ field.label_tag}}</label>
+                                {{ field|add_class:'form-control' }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                            {% comment %} <div class="col-lg-6">
+                                <label for="">Username</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Email</label>
+                                <input type="email" name="" class="form-control" id="">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Password</label>
+                                <input type="password" name="" class="form-control" id="">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Confirm Password</label>
+                                <input type="password" name="" class="form-control" id="">
+                            </div> {% endcomment %}
+                        </div>
+                        <button type="submit" class="btn btn-success sign-in-button">REGISTER</button>
+                    </form>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <span>Have an account ?</span>
+                            <br>
+                            <a href="">Login</a>
+                        </div>
+                        <div class="col-lg-4">
+                            Go <a href=""> Home </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+    

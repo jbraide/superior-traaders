@@ -1,0 +1,223 @@
+{% extends 'dashboard/dashboard-base.html' %}
+{% block title%} Dashboard {% endblock %}
+{% block dashboard %}
+{% load static %}
+
+    <div class="wrapper d-flex align-items-stretch">
+    {% include 'dashboard/sidebar.html' %}
+        
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <!-- slider-chart -->
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{
+                            "proName": "FOREXCOM:SPXUSD",
+                            "title": "S&P 500"
+                        }, {
+                            "proName": "FOREXCOM:NSXUSD",
+                            "title": "Nasdaq 100"
+                        }, {
+                            "proName": "FX_IDC:EURUSD",
+                            "title": "EUR/USD"
+                        }, {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        }, {
+                            "proName": "BITSTAMP:ETHUSD",
+                            "title": "ETH/USD"
+                        }],
+                        "colorTheme": "light",
+                        "isTransparent": false,
+                        "displayMode": "adaptive",
+                        "locale": "en"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+
+            <div class="greetings">
+                <div class="container">
+                    <div class="greeting-name">
+                        <h3>{{ request.user.username }}</h3>
+                        <span>Good Morning </span> <img src="{% static 'images/icons/sunrise.png'%}" alt="" class="ml-3">
+                    </div>
+                    <div class="account-profile-circle">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="balance-information">
+                <div class="container">
+
+                    <!-- balance -->
+                    <div id="account-balance">
+                        <h5>Balance</h5>
+                        <span class="amount">$ 0</span>
+                        <hr>
+                        <span>9% from last week</span>
+                    </div>
+
+                    <!-- invested -->
+                    <div id="invested">
+                        <h5>Invested</h5>
+                        <span class="amount">$ 0</span>
+                        <hr>
+                        <span>Profit Rate: 8%</span>
+                    </div>
+
+                    <!-- Account Type -->
+
+                    <div id="account-type">
+                        <h5>Account Type</h5>
+                        <span class="amount">Starter 0</span>
+                        <hr>
+                        <span>Trade Account</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container chart">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div id="tradingview_4118c"></div>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                    <div class="col-lg-6 forex-widget">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+                                {
+                                    "width": 400,
+                                    "height": 300,
+                                    "currencies": [
+                                        "EUR",
+                                        "USD",
+                                        "JPY",
+                                        "GBP",
+                                        "CHF",
+                                        "AUD",
+                                        "CAD",
+                                        "NZD",
+                                        "CNY"
+                                    ],
+                                    "isTransparent": false,
+                                    "colorTheme": "light",
+                                    "locale": "en"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                </div>
+
+            </div>
+            <div id="notification-section">
+                <div class="container">
+                    <h3 id="notification-header">Notifications</h3>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div id="notification-main">
+                                <div class="row">
+                                    <!-- header -->
+                                    <div class="col-sm-2">
+                                        <h6> Status</h6>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <h6> Details</h6>
+
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <h6>Amount</h6>
+                                    </div>
+
+                                    <!-- notification body -->
+                                    <div id="" class="row notification-body">
+                                        <div class="col-sm-2">
+                                            <i class="fas fa-circle success"></i>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>
+                                                A Deposit of $ 50 has been made to your Account.
+                                                </span>
+                                        </div>
+
+                                        <div class="col-sm-3 notification-amount">
+                                            <span>$ 50</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row notification-body">
+                                        <div class="col-sm-2">
+                                            <i class="fas fa-circle error"></i>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>
+                                                A withdrawal of $ 50 has been made to your Account.
+                                                </span>
+                                        </div>
+
+                                        <div class="col-sm-3 notification-amount">
+                                            <span>$ 50</span>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                                    {
+                                        "width": 400,
+                                        "height": 400,
+                                        "defaultColumn": "overview",
+                                        "defaultScreen": "general",
+                                        "market": "forex",
+                                        "showToolbar": true,
+                                        "colorTheme": "dark",
+                                        "locale": "en"
+                                    }
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+        new TradingView.widget({
+            "width": 500,
+            "height": 300,
+            "symbol": "EURUSD",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "3",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_4118c",
+
+        });
+   </script>
+{% endblock  %}

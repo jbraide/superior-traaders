@@ -1,0 +1,181 @@
+{% extends 'dashboard/dashboard-base.html' %}
+{% block title %}Profile {% endblock %}
+{% load static %}
+{% block dashboard %}
+    <div class="wrapper d-flex align-items-stretch">
+        {% include 'dashboard/sidebar.html' %}
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <!-- slider-chart -->
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{
+                            "proName": "FOREXCOM:SPXUSD",
+                            "title": "S&P 500"
+                        }, {
+                            "proName": "FOREXCOM:NSXUSD",
+                            "title": "Nasdaq 100"
+                        }, {
+                            "proName": "FX_IDC:EURUSD",
+                            "title": "EUR/USD"
+                        }, {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        }, {
+                            "proName": "BITSTAMP:ETHUSD",
+                            "title": "ETH/USD"
+                        }],
+                        "colorTheme": "light",
+                        "isTransparent": false,
+                        "displayMode": "adaptive",
+                        "locale": "en"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+
+            <!-- account settings -->
+            <div class="account-settings">
+                <div class="img-white-background">
+
+                </div>
+                <div id="account-name-title">
+                    <h3>{{ request.user.get_full_name }}</h3>
+                    <span id="settings-account-type">Trader</span>
+                </div>
+            </div>
+
+            <!-- settings navigation -->
+            <div id="setting-navigation">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">password</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+                <!-- profile box -->
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div id="account-section">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="profile-detail-box">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <span class="profile-title">Name</span>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <span>{{ request.user.get_full_name }}</span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <i class="fas fa-user"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="profile-detail-box">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <span class="profile-title">Email</span>
+                                        </div>
+                                        <div class="col-lg-7 profile-name">
+                                            <span class="profile-name">{{ request.user.email }}</span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <i class="fas fa-envelope"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="profile-detail-box">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <span class="profile-title">currency</span>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <span class="profile-name">$ 0</span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <i class="fas fa-money-bill"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="profile-detail-box">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <span class="profile-title">status</span>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <span>Unverified</span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <i class="fas fa-cog"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="profile-detail-box">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <span class="profile-title">Country</span>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <span class="profile-name">USA</span>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <i class="fas fa-flag"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- update password -->
+                <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                    <div id="change-password">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div id="change-password-header">
+                                    <span>Update Password</span>
+                                </div>
+                                <form action="" class="form-group">
+                                    <label for="">New Password</label>
+                                    <input type="password" class="form-control" id="" placeholder="Password">
+                                    <label for="">Re type Password</label>
+                                    <input type="password" class="form-control" id="" placeholder="Password">
+
+                                    <button class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- settings body -->
+
+
+
+        </div>
+    </div>
+{% endblock %}

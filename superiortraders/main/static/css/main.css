@@ -1,0 +1,479 @@
+body {
+    background-color: #202040;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* header style */
+
+.header-style {
+    content: '';
+    width: 40px;
+    color: #ccc;
+    height: 4px;
+}
+
+
+/* top header */
+
+.top-header {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+
+
+/* banner */
+
+
+/* background image for banner */
+
+img.d-block.w-100 {
+    height: 519px;
+}
+
+
+/* about section */
+
+.about-section {
+    clear: both;
+}
+
+.about-left {
+    background-color: #ffe;
+    width: 50%;
+    float: left;
+    clear: right;
+    padding: 8% 0;
+}
+
+.about-left>img {
+    width: 70%;
+    margin-left: 12%;
+}
+
+.about-right {
+    width: 50%;
+    float: right;
+    padding: 0 5%;
+    padding-top: 15%;
+}
+
+.about-right>p {
+    margin-top: 9%;
+}
+
+
+/* plans */
+
+.plans {
+    clear: both;
+    background-color: #602080;
+    padding: 5% 0
+}
+
+.plan-body {
+    background-color: #b030b0;
+    -webkit-box-shadow: 21px 26px 24px 3px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 21px 26px 24px 3px rgba(0, 0, 0, 0.44);
+    box-shadow: 21px 26px 24px 3px rgba(0, 0, 0, 0.44);
+    padding: 16% 0;
+}
+
+.plan-header {
+    font-size: 240%;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+}
+
+.plan-header-inner {
+    font-size: 170%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.plan-amount {
+    font-size: 160%;
+    margin: 12% 0;
+    margin-top: 15%;
+}
+
+.plan-body>p {
+    font-size: 80%;
+    font-weight: 4z00;
+}
+
+
+/* crypto & support section */
+
+.btc-sect {
+    float: left;
+    /* clear: right; */
+    width: 50%;
+    padding-left: 3%;
+}
+
+.btc-sect>h2 {
+    margin: 5% 0;
+    text-transform: uppercase
+}
+
+#support-section {
+    float: right;
+    background: linear-gradient(321deg, #222 50%, #000 50%);
+    width: 50%;
+    height: 545px;
+    padding-top: 18%;
+    /* padding-left: 19%; */
+}
+
+#support-section>h3 {
+    font-size: 220%;
+    text-transform: uppercase;
+}
+
+#support-section>span {
+    font-size: 130%;
+    margin-top: 4%;
+    letter-spacing: -1px;
+    font-weight: 200;
+}
+
+
+/* footer */
+
+footer {
+    padding-top: 6%;
+    clear: both;
+    background-color: #202060;
+    height: 350px;
+}
+
+#about-footer>a {
+    display: block;
+}
+
+#copyright {
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    padding-top: 2%;
+}
+
+#column-1>h3,
+.column-2>h3,
+#column-3>h3,
+#column-4>h3 {
+    margin-bottom: 8%;
+    font-size: 160%;
+    text-transform: capitalize;
+}
+
+#column-1>p {
+    font-weight: 300;
+    font-size: 85%
+}
+
+.column-2>a {
+    color: #ccc;
+    font-size: 90%;
+    margin-bottom: 3%;
+}
+
+.column-2>a:hover,
+#column-4>a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* social */
+
+#column-4>h3 {
+    margin-bottom: 26%;
+}
+
+#column-4>a {
+    margin-right: 7%;
+    color: #ccc;
+    font-size: 140%;
+    /* display: block; */
+}
+
+section>p {
+    margin-bottom: 0;
+    font-weight: 200;
+}
+
+section>span {
+    font-size: 80%;
+}
+
+
+/* login page */
+
+#login-main-background {
+    background: linear-gradient(106deg, rgba(32, 32, 64, 1) 00%, rgba(176, 48, 176, 1) 60%);
+    width: 100%;
+    height: 100vh;
+    padding-top: 5%;
+}
+
+#login-form-area {
+    background-color: white;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#login-img {
+    float: left;
+    clear: right;
+    width: 50%;
+    height: 500px;
+    background: url('/static/images/beach-calm-clouds-coast-457881.jpg');
+}
+
+#login-form {
+    width: 50%;
+    float: right;
+    color: black;
+    margin-top: 12%;
+}
+
+#login-form>h3 {
+    margin-bottom: 13%;
+}
+
+.sign-in-button {
+    margin: 3% 0%;
+    width: 100%;
+    border-radius: 0;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.col-lg-6 {
+    margin-bottom: 4%;
+}
+
+
+/* dashboard */
+
+
+/* home */
+
+#sidebar {
+    height: 1400px;
+}
+
+
+/* greetings */
+
+.greetings {
+    margin: 5% 0;
+}
+
+.greeting-name>h3 {
+    color: white;
+    font-weight: 800;
+}
+
+.greeting-name>span {
+    font-size: 120%;
+}
+
+.greeting-name>img {
+    width: 4%;
+}
+
+.greeting-name {
+    float: left;
+    clear: right;
+}
+
+.account-profile-circle {
+    float: right;
+    background-color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.account-profile-circle>i {
+    margin: 34% 36%;
+    color: black;
+    font-size: 137%
+}
+
+
+/* account information */
+
+.balance-information {
+    padding-top: 3%;
+    clear: both;
+    /* display: inline-block; */
+}
+
+#account-balance,
+#invested,
+#account-type {
+    width: 30%;
+    margin: 1.3% 0;
+    margin-right: 3%;
+    padding: 3%;
+    float: left;
+    clear: right;
+}
+
+#account-balance>h5,
+#invested>h5,
+#account-type>h5 {
+    font-size: 115%;
+}
+
+#account-balance {
+    background-color: #3c6562;
+}
+
+#invested {
+    background-color: #ed6363;
+}
+
+#account-type {
+    background-color: #63ed63;
+}
+
+.line-under {
+    border-bottom: 1px solid white;
+    width: 50%;
+}
+
+.amount {
+    font-size: 180%;
+}
+
+hr {
+    border: 1px solid white;
+}
+
+
+/* charting */
+
+.chart {
+    clear: both;
+}
+
+.forex-widget {
+    padding-left: 6%;
+}
+
+
+/* notification */
+
+#notification-main {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 4%;
+}
+
+#notification-header {
+    color: white;
+    font-size: 150%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 4% 0;
+}
+
+.notification-body {
+    margin: 2%
+}
+
+.notification-amount {
+    padding-left: 9%;
+}
+
+.success {
+    color: #70C869
+}
+
+.error {
+    color: #F54F52;
+}
+
+
+/* account settings */
+
+.account-settings {
+    background: url('../images/architecture-buildings-business-city-290595.jpg');
+    width: 100%;
+    height: 170px;
+}
+
+.img-white-background {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    float: left;
+    clear: right;
+    margin: 3%;
+}
+
+#settings-account-type {
+    color: white;
+    background: black;
+    font-weight: 600;
+    padding: 8% 11%;
+}
+
+#account-name-title {
+    float: left;
+    margin-top: 4.5%;
+}
+
+#setting-navigation {
+    background-color: white;
+}
+
+.profile-detail-box {
+    background-color: white;
+    height: 50px;
+    color: black;
+    padding: 3%;
+    margin-bottom: 5%;
+}
+
+.profile-title {
+    background-color: #70C869;
+    padding: 10%;
+}
+
+.profile-name {
+    font-size: 110%;
+    /* text-transform: uppercase; */
+}
+
+#account-section {
+    margin: 3% 0;
+}
+
+
+/* password */
+
+#change-password-header {
+    background-color: white;
+    width: 100%;
+    color: black;
+    height: 40px;
+    padding-left: 3%;
+    padding-top: 2%;
+    margin-top: 3%;
+}
+
+#change-password-header>span {
+    font-size: 110%;
+    font-weight: bold;
+}
