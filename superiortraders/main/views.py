@@ -7,13 +7,26 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import RegistrationForm, LoginForm
 
+# models
+from .models import Balance
+from django.db.models import Sum
+
+# password reset 
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+
 
 def index(request):
     return render(request, 'main/index.html')
 
 @login_required(login_url='/login')
 def dashboard(request):
-    return render(request, 'main/dashboard.html')
+    user = request.user
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    context = {
+        'balance': balance
+    }
+    return render(request, 'main/dashboard.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -69,10 +82,29 @@ def login(request):
     }
     return render(request, 'main/login.html', context)
 
+
+@login_required(login_url='/login')
 def logout_view(request):
     logout(request)
     return redirect('main:index')
 
-
+@login_required(login_url='/login')
 def account(request):
-    return render(request, 'main/account.html')
+    user = request.user
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            # messages.success(request, 'Password was successfully changed..')
+            return redirect('main:dashboard')
+        else:
+            print('error in changing the password')
+    else:
+        form = PasswordChangeForm(request.user)
+    context = {
+        'balance': balance, 
+        'form': form
+    }
+    return render(request, 'main/account.html', context)
