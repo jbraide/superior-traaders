@@ -33,7 +33,7 @@ def dashboard(request):
     now  = datetime.datetime.now()
     hour = now.hour
 
-    if hour < 12:
+    if hour < 11:
         greeting = 'Good Morning'
 
     elif hour < 18:
