@@ -43,7 +43,8 @@
                 <div class="container">
                     <div class="greeting-name wow slideInDown">
                         <h3 class="wow slideInUp" data-wow-duration="1.3s">{{ request.user.username }}</h3>
-                        <span>Good Morning </span> <img src="./static/images/icons/sunrise.png" alt="" class="ml-3">
+                        <span>{{ greeting }} </span> <img src="{% static 'images/icons/sunrise.png' %}" alt="" class="ml-3">
+                        
                     </div>
                     <div class="account-profile-circle ">
                         <i class="fas fa-user wow lightSpeedIn"></i>

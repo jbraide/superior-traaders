@@ -497,6 +497,33 @@ body {
         font-size: 110%;
         font-weight: bold;
     }
+
+
+    /* rules and agreements */
+    #rules-agreement-parallax{
+        background: url('../images/office-chair.jpg');
+        height: 150px;
+        background-position: fixed;
+        background-size: cover;
+    }
+
+    #rules-agreement-parallax > h3 {
+        padding-top: 6%;
+        font-size: 180%;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .rules-agreement {
+        margin:5% 0;
+    }
+
+    .rules-agreement > p {
+        line-height: 30px;
+        font-weight: 300;
+        font-size: 89%;
+    }
 }
 
 
@@ -970,5 +997,31 @@ body {
     #change-password-header>span {
         font-size: 110%;
         font-weight: bold;
+    }
+
+     /* rules and agreements */
+     #rules-agreement-parallax{
+        background: url('../images/office-chair.jpg');
+        height: 150px;
+        background-position: fixed;
+        background-size: cover;
+    }
+
+    #rules-agreement-parallax > h3 {
+        padding: 20% 2%;
+        font-size: 125%;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .rules-agreement {
+        margin:5% 0;
+    }
+
+    .rules-agreement > p {
+        line-height: 30px;
+        font-weight: 300;
+        font-size: 89%;
     }
 }

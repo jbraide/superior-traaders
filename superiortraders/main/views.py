@@ -15,16 +15,37 @@ from django.db.models import Sum
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
+# time, dateteime
+# import time
+import datetime
+
 
 def index(request):
     return render(request, 'main/index.html')
+
+def rules(request):
+    return render(request,'main/rules-agreement.html')
 
 @login_required(login_url='/login')
 def dashboard(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    now  = datetime.datetime.now()
+    hour = now.hour
+
+    if hour < 12:
+        greeting = 'Good Morning'
+
+    elif hour < 18:
+        greeting = 'Good Afternoon'
+
+    else:
+        greeting = 'Good Evening'
+
+    print(f'{ greeting }')
     context = {
-        'balance': balance
+        'balance': balance, 
+        'greeting': greeting
     }
     return render(request, 'main/dashboard.html', context)
 
