@@ -23,6 +23,9 @@ import datetime
 def index(request):
     return render(request, 'main/index.html')
 
+def about(request):
+    return render(request, 'main/about.html')
+
 def rules(request):
     return render(request,'main/rules-agreement.html')
 
@@ -31,12 +34,16 @@ def dashboard(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     now  = datetime.datetime.now()
+
+    # fix bug to allow time to change greeting after :59 mins
+    time = now.timestamp
+    print(time)
     hour = now.hour
 
     if hour < 11:
         greeting = 'Good Morning'
 
-    elif hour < 18:
+    elif hour < 17:
         greeting = 'Good Afternoon'
 
     else:
@@ -52,13 +59,10 @@ def dashboard(request):
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        print('I passed test 1')
         if form.is_valid():
             user = form.save()
-            print('I passed test 2')
             
             user.refresh_from_db()
-            print('I passed test 3')
 
             # save form data to profile forms
             user.profile.first_name = form.cleaned_data.get('first_name')

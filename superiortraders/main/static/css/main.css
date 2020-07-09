@@ -524,6 +524,41 @@ body {
         font-weight: 300;
         font-size: 89%;
     }
+
+    /* about us  */
+    #about-parallax{
+        background: url('../images/office-chair.jpg');
+        height: 150px;
+        background-position: fixed;
+        background-size: cover;
+    }
+
+    #about-parallax > h3 {
+        padding-top: 6%;
+        font-size: 180%;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .about {
+        margin:5% 0;
+    }
+
+    .about > p {
+        line-height: 30px;
+        font-weight: 300;
+        font-size: 89%;
+    }
+
+    /* office layout */
+    #office-layout-parallax {
+        height: 800px;
+        background: url('../images/adults-airport-architecture-blur-518244.jpg');
+        background-position: fixed;
+        background-size: cover;
+
+    }
 }
 
 
