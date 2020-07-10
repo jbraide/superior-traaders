@@ -33,17 +33,16 @@ def rules(request):
 def dashboard(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+
+    # greeting 
     now  = datetime.datetime.now()
+    current_time = now.strftime("%H:%M")
+    
 
-    # fix bug to allow time to change greeting after :59 mins
-    time = now.timestamp
-    print(time)
-    hour = now.hour
-
-    if hour < 11:
+    if current_time < '11:59':
         greeting = 'Good Morning'
 
-    elif hour < 17:
+    elif current_time < '17:59':
         greeting = 'Good Afternoon'
 
     else:
