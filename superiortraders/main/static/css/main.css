@@ -86,7 +86,7 @@ body {
     /* superior traders operation */
     #s-t-o-background {
         clear: both;
-        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 35%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
+        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
         height: 700px;
     }
     #s-t-o-header {
@@ -596,6 +596,133 @@ body {
         background-size: cover;
 
     }
+
+    /* about us  */
+    #about-parallax{
+        background: url('../images/office-chair.jpg');
+        height: 150px;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #about-parallax > h3 {
+        padding-top: 6%;
+        font-size: 180%;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .about {
+        margin:5% 2%;
+    }
+
+    .about > p {
+        line-height: 30px;
+        font-weight: 300;
+        font-size: 89%;
+    }
+
+    /* office layout about us */
+    .office-layout-header {
+        font-size: 220%;
+        margin-bottom: 3%;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+    #office-layout-parallax {
+        height: 400px;
+        background: url('../images/adults-airport-architecture-blur-518244.jpg');
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    /* testimonial about us */
+
+    .owl-carousel .owl-item img {
+        display: block;
+        width: 50%;
+    }
+
+    .testimonial-header {
+        font-size: 220%;
+        font-weight: bold;
+
+    }
+    .testifier-image {
+        width: 50%;
+        border-radius: 50%;
+    }
+    
+    .testimonials {
+        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
+        padding: 3% 0;
+    }
+
+
+    .testifier-name > span {
+        float: right;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .testifier-text  > p {
+        font-size: 120%;
+        font-style: italic;
+        margin-top: 2%;
+    }
+
+    /* deposit */
+    .deposit-balance-info-background {
+        clear: both;
+        background-color: #fff;
+        height: 90px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .deposit-balance-name {
+        float: left;
+    }
+    .deposit-balance-amount  {
+        float: right;
+    }
+
+    .deposit-balance-amount > span {
+        color: black;
+        font-size: 150%;
+    }
+    
+    
+    .deposit-content-background {
+        margin-top: 5%;
+        clear: both;
+        background-color:white;
+        /* height: 300px; */
+        padding: 5% 6%;
+        padding-left: 3%;
+
+    }
+
+    .col-lg-6 > label, .deposit-amount-form > label {
+        color: black;
+        font-weight: 300;
+        font-size: 140%;
+    }
+
+    .col-lg-6 > select {
+        border: 1px solid #ccc
+    }
+
+    .deposit-amount-form > input {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .deposit-amount-form {
+        margin-bottom: 3%;
+    }
 }
 
 
@@ -671,7 +798,7 @@ body {
     #s-t-o-background {
         clear: both;
         background: rgb(32,32,64);
-        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 35%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
+        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
         padding: 5% 0;
         line-height: 2;
     }
@@ -1181,5 +1308,150 @@ body {
         line-height: 30px;
         font-weight: 300;
         font-size: 89%;
+    }
+
+    /* about us  */
+    #about-parallax{
+        background: url('../images/office-chair.jpg');
+        height: 150px;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    #about-parallax > h3 {
+        padding-top: 6%;
+        font-size: 180%;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .about {
+        margin:5% 2%;
+    }
+
+    /* .about > p {
+        line-height: 30px;
+        font-weight: 300;
+        font-size: 89%;
+    } */
+
+    #about-video {
+        margin-left: 8%;
+        padding: 0;
+        margin-bottom: 15%;
+    }
+
+
+    #about-text > p {
+        font-size: 89%;
+        line-height: 2;
+    }
+
+    /* office layout about us */
+    .office-layout-header {
+        font-size: 220%;
+        margin-bottom: 9%;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+    #office-layout-parallax {
+        height: 400px;
+        background: url('../images/adults-airport-architecture-blur-518244.jpg');
+        /* background-position: center; */
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    /* testimonial about us */
+
+    .owl-carousel .owl-item img {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 8%;
+    }
+
+    .testimonial-header {
+        font-size: 220%;
+        font-weight: bold;
+        margin: 15% 0;
+
+    }
+    .testifier-image {
+        width: 50%;
+        border-radius: 50%;
+    }
+    
+    .testimonials {
+        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
+        padding: 3% 0;
+    }
+
+
+    .testifier-name > span {
+        float: right;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        /* text-align: center; */
+    }
+
+    .testifier-text  > p {
+        font-size: 120%;
+        font-style: italic;
+        margin-top: 2%;
+        text-align: center;
+    }
+    
+
+    /* deposit */
+    .deposit-balance-info-background {
+        clear: both;
+        background-color: #fff;
+        height: 90px;
+        padding-top: 7%;
+    }
+    .deposit-balance-name {
+        float: left;
+    }
+    .deposit-balance-amount  {
+        float: right;
+    }
+
+    .deposit-balance-amount > span {
+        color: black;
+        font-size: 150%;
+    }
+    
+    
+    .deposit-content-background {
+        margin-top: 10%;
+        clear: both;
+        background-color:white;
+        /* height: 300px; */
+        padding: 5% 6%;
+        padding-left: 3%;
+
+    }
+
+    .col-lg-6 > label, .deposit-amount-form > label {
+        color: black;
+        font-weight: 300;
+        font-size: 140%;
+    }
+
+    .col-lg-6 > select {
+        border: 1px solid #ccc
+    }
+
+    .deposit-amount-form > input {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .deposit-amount-form {
+        margin-bottom: 10%;
     }
 }

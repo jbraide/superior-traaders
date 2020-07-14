@@ -5,7 +5,7 @@ from django.contrib.auth import login as auth_login
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegistrationForm, LoginForm
+from .forms import RegistrationForm, LoginForm, DepositForm, ProfileForm
 
 # models
 from .models import Balance
@@ -47,8 +47,6 @@ def dashboard(request):
 
     else:
         greeting = 'Good Evening'
-
-    print(f'{ greeting }')
     context = {
         'balance': balance, 
         'greeting': greeting
@@ -58,6 +56,7 @@ def dashboard(request):
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
+        picture = ProfileForm(request.POST)
         if form.is_valid():
             user = form.save()
             
@@ -67,7 +66,10 @@ def register(request):
             user.profile.first_name = form.cleaned_data.get('first_name')
             user.profile.last_name = form.cleaned_data.get('last_name')
             user.profile.email = form.cleaned_data.get('email')
+            # user.profile.profile_picture = picture.cleaned_data.get('profile_picture')
+
             user.save()
+            picture.save()
 
             # auto login
             username = form.cleaned_data.get('username')
@@ -83,8 +85,10 @@ def register(request):
 
     else:
         form = RegistrationForm()
+        picture = ProfileForm()
     context = {
-        'form': form
+        'form': form, 
+        'picture': picture
     }
     return render(request, 'main/register.html', context)
 
@@ -132,3 +136,27 @@ def account(request):
         'form': form
     }
     return render(request, 'main/account.html', context)
+
+
+from django.contrib import messages
+# Deposit function 
+def deposit(request):
+    if request.method == 'POST':
+        form = DepositForm(request.POST)
+        if form.is_valid():
+            form.save
+            messages.error(request,'Deposit error Contact admin at support@superior-traders.com')
+            return redirect('main:dashboard')
+
+        else: 
+            errors = form.errors
+            print(errors)
+
+
+    else:
+        form = DepositForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'main/deposit.html', context)

@@ -1,13 +1,22 @@
 {% extends 'dashboard/dashboard-base.html' %}
 {% block title%} Dashboard {% endblock %}
-{% block dashboard %}
 {% load static %}
+{% block dashboard %}
 
     <div class="wrapper d-flex align-items-stretch">
     {% include 'dashboard/sidebar.html' %}
         
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
+
+            <div class="container">
+                {% if messages %}
+                    {% for message in messages  %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
             <!-- slider-chart -->
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
@@ -179,12 +188,29 @@
             </div>
 
             <!-- mobile display  -->
-            <div class="container chart mobile">
+            <div class="container chart ">
                 <div class="row">
                     <div class="col-lg-6">
                         <!-- TradingView Widget BEGIN -->
                         <div class="tradingview-widget-container">
                             <div id="tradingview_4118c"></div>
+                            <script type="text/javascript">
+                                new TradingView.widget({
+                                    "width": 300,
+                                    "height": 300,
+                                    "symbol": "EURUSD",
+                                    "interval": "D",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "dark",
+                                    "style": "3",
+                                    "locale": "en",
+                                    "toolbar_bg": "#f1f3f6",
+                                    "enable_publishing": false,
+                                    "allow_symbol_change": true,
+                                    "container_id": "tradingview_4118c",
+                        
+                                });
+                           </script>
                         </div>
                         <!-- TradingView Widget END -->
                     </div>

@@ -1,0 +1,124 @@
+{% extends 'dashboard/dashboard-base.html' %}
+{% block dashboard %}
+{% load widget_tweaks %}
+
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        {% include 'dashboard/sidebar.html' %}
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            
+               <!-- slider-chart -->
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container ">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{
+                            "proName": "FOREXCOM:SPXUSD",
+                            "title": "S&P 500"
+                        }, {
+                            "proName": "FOREXCOM:NSXUSD",
+                            "title": "Nasdaq 100"
+                        }, {
+                            "proName": "FX_IDC:EURUSD",
+                            "title": "EUR/USD"
+                        }, {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        }, {
+                            "proName": "BITSTAMP:ETHUSD",
+                            "title": "ETH/USD"
+                        }],
+                        "colorTheme": "light",
+                        "isTransparent": false,
+                        "displayMode": "adaptive",
+                        "locale": "en"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+            
+            <div class="greetings greeting-deposit">
+                <div class="container">
+                    <div class="greeting-name wow slideInDown">
+                        <h3 class="wow slideInUp" data-wow-duration="1.3s">User</h3>
+                        <span>Good Morning </span> <img src="./static/images/icons/sunrise.png" alt="" class="ml-3">
+                    </div>
+                    <div class="account-profile-circle ">
+                        <i class="fas fa-user wow lightSpeedIn"></i>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="deposit-balance-info-background">
+                <div class="container">
+                        <div class="deposit-balance-name">
+                            <h3>Balance</h3>
+                        </div>
+                        <div class="deposit-balance-amount">
+                            <span>$ 0.00</span>
+                        </div>
+                </div>                
+            </div>
+
+            <div class="deposit-content-background">
+                <div class="container">
+                    <div class="form-group">
+                        <h3 class="deposit-header">Deposit</h3>
+                            <form action="" method="post">
+                                <div class="row">
+                                    {% csrf_token %}
+                                <div class="col-lg-6">
+                                    <label for="{{ form.id_for_label }}">{{ form.select_payment_method.label_tag }}</label>
+                                    <select class="form-control" id="sel1">
+                                        {{ form.select_payment_method }}
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="{{ form.id_for_label }}">{{ form.select_currency.label_tag }}</label>
+                                    <select class="form-control" id="sel1">
+                                        {{ form.select_currency }}
+                                    </select>
+                                </div>
+                                <div class="col-lg-12 deposit_amount_form">
+                                    <label for="{{ form.id_for_label }}">{{ form.amount.label_tag }}</label>
+                                        {{ form.amount|add_class:'form-control' }}                                    
+                                </div>
+                            <button class="btn btn-success btn-block">Deposit</button> 
+
+                        </div>
+                    </form>
+                            <!-- <div class="col-lg-6">
+                                <label for="sel1">Select Payment method</label>
+                                <select class="form-control" id="sel1">
+                                <option>bitcoin</option>
+                                <option>bitcoin</option>
+                                <option>bitcoin</option>
+                                <option>bitcoin</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="sel1">Select Currency</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Dollars</option>
+                                    <option>Dollars</option>
+                                    <option>Dollars</option>
+                                    <option>Dollars</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 deposit-amount-form">
+                                <label for="">Amount</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+
+                            <button class="btn btn-success btn-block">Deposit</button> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

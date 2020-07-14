@@ -26,6 +26,7 @@ class Profile(models.Model):
     city =  models.CharField(max_length = 100, default=False, blank=True)
     state = models.CharField(max_length=30, default= '', blank=True)
     postal_or_zip_code = models.CharField(max_length=6, blank=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
     def __str__(self):
         return self.user.username
     
@@ -41,5 +42,20 @@ post_save.connect(create_user_profile, sender=User)
 # @receiver(post_save, sender=User)
 # def save_user_profile(sender, instance,**kwargs):
 #     instance.profile.save()
+
+
+
+class Deposit(models.Model):
+    deposit_choices = [
+        ('Bitcoin', 'bitcoin'),
+    ]
+    currency = [
+        ('usd', 'USD'), 
+        ('eur', 'EUR'), 
+        ('pounds', 'GBP')
+    ]
+    select_payment_method = models.CharField(max_length=20, choices=deposit_choices)
+    select_currency = models.CharField(max_length=20, choices=currency)
+    amount = models.BigIntegerField(default='')
 
 
