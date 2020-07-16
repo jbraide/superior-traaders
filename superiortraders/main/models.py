@@ -26,7 +26,8 @@ class Profile(models.Model):
     city =  models.CharField(max_length = 100, default=False, blank=True)
     state = models.CharField(max_length=30, default= '', blank=True)
     postal_or_zip_code = models.CharField(max_length=6, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, default='/static/images/photo-of-lighthouse.jpg')
+    status = models.BooleanField(default=False)
     def __str__(self):
         return self.user.username
     

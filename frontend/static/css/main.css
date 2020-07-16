@@ -77,11 +77,12 @@ body {
         width: 50%;
         float: right;
         padding: 0 5%;
-        padding-top: 15%;
+        padding-top: 6%;
     }
 
     .about-right>p {
         margin-top: 9%;
+        line-height: 2;
     }
 
     /* superior traders operation */
