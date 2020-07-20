@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Balance, Deposit
+from .models import Profile, Balance, Deposit, InvestedAmount, AccountType, Signals
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -9,7 +9,21 @@ class ProfileAdmin(admin.ModelAdmin):
 class BalanceAdmin(admin.ModelAdmin):
     list_display = ['user', 'amount']
 
-@admin.register(Deposit)
-class DepositAdmin(admin.ModelAdmin):
-    list_display = ['amount',]
+# @admin.register(Deposit)
+# class DepositAdmin(admin.ModelAdmin):
+#     list_display = ['user','amount',]
+
+@admin.register(InvestedAmount)
+class InvestedAmountAdmin(admin.ModelAdmin):
+    list_display = ['user','amount',]
+    
+@admin.register(AccountType)
+class AccountTypeAdmin(admin.ModelAdmin):
+    list_display = ['user', 'type']
+
+@admin.register(Signals)
+class SignalsAdmin(admin.ModelAdmin):
+    list_display = ['user','amount',]
+
+
 

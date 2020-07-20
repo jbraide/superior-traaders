@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm, LoginForm, DepositForm, ProfileForm
 
 # models
-from .models import Balance
+from .models import Balance, Signals, AccountType, InvestedAmount
 from django.db.models import Sum
 
 # password reset 
@@ -33,6 +33,9 @@ def rules(request):
 def dashboard(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    type = AccountType.objects.filter(user=user)
 
     # greeting 
     now  = datetime.datetime.now()
@@ -47,9 +50,14 @@ def dashboard(request):
 
     else:
         greeting = 'Good Evening'
+
+
     context = {
         'balance': balance, 
-        'greeting': greeting
+        'greeting': greeting, 
+        'signals': signals_amount, 
+        'invested': invested, 
+        'type': type
     }
     return render(request, 'main/dashboard.html', context)
 
@@ -94,23 +102,23 @@ def register(request):
     }
     return render(request, 'main/register.html', context)
 
-def login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            authenticated = authenticate(request,username=username,password=password)
-            auth_login(request, authenticated)
-            return redirect('main:dashboard')
-        else:
-            print(form.errors)
-    else: 
-        form = LoginForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'main/login.html', context)
+# def login(request):
+#     if request.method == 'POST':
+#         form = LoginForm(request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password')
+#             authenticated = authenticate(request,username=username,password=password)
+#             auth_login(request, authenticated)
+#             return redirect('main:dashboard')
+#         else:
+#             print(form.errors)
+#     else: 
+#         form = LoginForm()
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'main/login.html', context)
 
 
 @login_required(login_url='/login')

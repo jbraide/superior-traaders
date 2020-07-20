@@ -129,3 +129,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+LOGIN_REDIRECT_URL = 'main:dashboard'

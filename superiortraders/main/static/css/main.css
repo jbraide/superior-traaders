@@ -118,7 +118,9 @@ body {
 
     .services-message > span {
         font-weight: 300;
+        line-height: 2;
     }
+
 
 
 
@@ -229,7 +231,8 @@ body {
 
     #column-1>p {
         font-weight: 300;
-        font-size: 85%
+        font-size: 85%;
+        line-height: 2;
     }
 
     .column-2>a {
@@ -317,6 +320,53 @@ body {
         margin-bottom: 4%;
     }
 
+    /* registration form */
+
+    #registration-main-background {
+        background: linear-gradient(106deg, rgba(32, 32, 64, 1) 00%, rgba(176, 48, 176, 1) 60%);
+        width: 100%;
+        padding: 5% 0;
+    }
+
+    #registration-form-area {
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #registration-img {
+        width: 100%;
+        height: 200px;
+        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    #registration-form {
+        color: black;
+        margin: 0 5%;
+        margin-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #registration-form>h3 {
+        margin-bottom: 5%;
+    }
+
+    .sign-in-button {
+        margin: 3% 0%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 4%;
+    }
 
     /* dashboard */
 
@@ -792,6 +842,11 @@ body {
 
     .about-right>p {
         margin-top: 9%;
+        font-size: 96%;
+        line-height: 2;
+        padding: 0 4%;
+        text-align: center;
+        padding-bottom: 5%;
     }
 
     /* superior traders operation */
@@ -825,7 +880,7 @@ body {
     }
 
     .services-message {
-        margin: 10% 0;
+        margin: 10% 8%;
     }
 
     .services-message > h4 {
@@ -834,7 +889,10 @@ body {
 
     .services-message > span {
         font-weight: 300;
-        font-size: 90%;
+        font-size: 96%;
+        line-height: 3;
+        /* padding: 0 2%; */
+        text-align: center;
     }
 /* superior traders operation */
     #s-t-o-background {
@@ -984,7 +1042,10 @@ body {
 
     #column-1>p {
         font-weight: 300;
-        font-size: 85%
+        font-size: 85%;
+        line-height: 2;
+        margin: 0 3%;
+        margin-bottom: 4%;
     }
 
     .column-2>a {
@@ -1068,6 +1129,55 @@ body {
     }
 
 
+    /* registration form */
+
+    #registration-main-background {
+        background: linear-gradient(106deg, rgba(32, 32, 64, 1) 00%, rgba(176, 48, 176, 1) 60%);
+        width: 100%;
+        padding-top: 5%;
+    }
+
+    #registration-form-area {
+        background-color: white;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #registration-img {
+        width: 100%;
+        height: 100px;
+        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    #registration-form {
+        color: black;
+        margin: 0 5%;
+        margin-top: 10%;
+    }
+
+    #registration-form>h3 {
+        margin-bottom: 10%;
+        text-transform: uppercase;
+    }
+
+    .sign-in-button {
+        margin: 3% 0%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 4%;
+    }
+
+    
     /* dashboard */
 
 

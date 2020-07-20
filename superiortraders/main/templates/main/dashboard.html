@@ -79,7 +79,11 @@
                     <!-- invested -->
                     <div id="invested" class=" wow bounceInUp" data-wow-duration="1.2s">
                         <h5>Invested</h5>
+                        {% if invested.amount %}
+                        <span class="amount">$ {{ invested.amount }}</span>
+                        {% else %}
                         <span class="amount">$ 0</span>
+                        {% endif %}
                         <hr>
                         <span>Profit Rate: 8%</span>
                     </div>
@@ -88,7 +92,11 @@
 
                     <div id="account-type" class=" wow bounceInUp" data-wow-duration="1.5s">
                         <h5>Account Type</h5>
-                        <span class="amount">Starter 0</span>
+                        {% if type.type %}
+                        <span class="amount"> {{ type }}</span>
+                        {% else %}
+                        <span class="amount">Starter</span>
+                        {% endif %}
                         <hr>
                         <span>Trade Account</span>
                     </div>
@@ -96,9 +104,13 @@
                     <!-- forex signals  -->
                     <div id="account-type" class=" wow bounceInUp" data-wow-duration="1.5s">
                         <h5>Forex Signals</h5>
+                        {% if signals.amount %}
+                        <span class="amount">$ {{ signals.amount }}</span>
+                        {% else %}
                         <span class="amount">$ 0</span>
+                        {% endif %}
                         <hr>
-                        <span></span>
+                        <span>80% Accuracy </span>
                     </div>
                 </div>
 
@@ -117,31 +129,42 @@
                             <hr>
                             <span>9% from last week</span>
                         </div>
-    
                         <!-- invested -->
-                        <div id="invested" class="item wow bounceInUp" data-wow-duration="1.2s">
-                            <h5>Invested</h5>
-                            <span class="amount">$ 0</span>
-                            <hr>
-                            <span>Profit Rate: 8%</span>
-                        </div>
-    
-                        <!-- Account Type -->
-    
-                        <div id="account-type" class="item wow bounceInUp" data-wow-duration="1.5s">
-                            <h5>Account Type</h5>
-                            <span class="amount">Starter 0</span>
-                            <hr>
-                            <span>Trade Account</span>
-                        </div>
+                    <div id="invested" class="item wow bounceInUp" data-wow-duration="1.2s">
+                        <h5>Invested</h5>
+                        {% if invested.amount %}
+                        <span class="amount">$ {{ invested.amount }}</span>
+                        {% else %}
+                        <span class="amount">$ 0</span>
+                        {% endif %}
+                        <hr>
+                        <span>Profit Rate: 8%</span>
+                    </div>
 
-                        <!-- signals -->
-                        <div id="account-type" class=" wow bounceInUp" data-wow-duration="1.5s">
-                            <h5>Forex Signals</h5>
-                            <span class="amount">$ 0</span>
-                            <hr>
-                            <span>80% Accuracy </span>
-                        </div>
+                    <!-- Account Type -->
+
+                    <div id="account-type" class="item wow bounceInUp" data-wow-duration="1.5s">
+                        <h5>Account Type</h5>
+                        {% if type.type %}
+                        <span class="amount"> {{ type }}</span>
+                        {% else %}
+                        <span class="amount">Starter</span>
+                        {% endif %}
+                        <hr>
+                        <span>Trade Account</span>
+                    </div>
+
+                    <!-- forex signals  -->
+                    <div id="account-type" class="item wow bounceInUp" data-wow-duration="1.5s">
+                        <h5>Forex Signals</h5>
+                        {% if signals.amount %}
+                        <span class="amount">$ {{ signals.amount }}</span>
+                        {% else %}
+                        <span class="amount">$ 0</span>
+                        {% endif %}
+                        <hr>
+                        <span>80% Accuracy </span>
+                    </div>
                     </div>
                 </div>
             </div>

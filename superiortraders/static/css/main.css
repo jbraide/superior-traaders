@@ -297,11 +297,11 @@ body {
         width: 50%;
         float: right;
         color: black;
-        margin-top: 12%;
+        margin-top: 9%;
     }
 
     #login-form>h3 {
-        margin-bottom: 13%;
+        margin-bottom: 6%;
     }
 
     .sign-in-button {

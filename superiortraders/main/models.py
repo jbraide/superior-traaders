@@ -3,20 +3,45 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
+# balance
 class Balance(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
 
+# invested amount
 class InvestedAmount(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
 
+# forex signals 
+class Signals(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField()
+
+# Account type 
+class AccountType(models.Model):
+    account_types = [
+        ('premium', 'premium'), 
+        ('luxury', 'luxury'), 
+        ('vip', 'VIP'), 
+        ('vip luxury', 'vip luxury'), 
+        ('silver', 'silver'), 
+        ('gold', 'gold'), 
+        ('platinum', 'platinum'), 
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    type = models.CharField(max_length=30, choices=account_types)
+
+# Notifications
 class Notification(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
     details = models.CharField(max_length=40)
     amount = models.PositiveIntegerField()
 
+
+# profile
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length=23, default='', blank=True)
@@ -58,5 +83,9 @@ class Deposit(models.Model):
     select_payment_method = models.CharField(max_length=20, choices=deposit_choices)
     select_currency = models.CharField(max_length=20, choices=currency)
     amount = models.BigIntegerField(default='')
+
+    class Meta:
+        verbose_name = 'Signal'
+        verbose_name_plural = 'Signals'
 
 
