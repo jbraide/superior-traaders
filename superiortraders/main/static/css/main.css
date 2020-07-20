@@ -51,6 +51,7 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
+        box-shadow: 0 3000px #000 inset;
     }
 
 
@@ -77,12 +78,14 @@ body {
         width: 50%;
         float: right;
         padding: 0 5%;
-        padding-top: 15%;
+        padding-top: 6%;
     }
 
     .about-right>p {
         margin-top: 9%;
+        line-height: 2;
     }
+
     /* superior traders operation */
     #s-t-o-background {
         clear: both;
@@ -121,13 +124,9 @@ body {
         line-height: 2;
     }
 
-
-
-
     /* plans */
 
     .plans {
-        clear: both;
         background-color: #602080;
         padding: 5% 0
     }
@@ -160,7 +159,7 @@ body {
 
     .plan-body>p {
         font-size: 80%;
-        font-weight: 4z00;
+        font-weight: 400;
     }
 
 
@@ -292,7 +291,7 @@ body {
         clear: right;
         width: 50%;
         height: 500px;
-        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background: url('/frontend/static/images/beach-calm-clouds-coast-457881.jpg');
     }
 
     #login-form {
@@ -367,6 +366,7 @@ body {
     .col-lg-6 {
         margin-bottom: 4%;
     }
+
 
     /* dashboard */
 
@@ -523,7 +523,7 @@ body {
     .img-white-background {
         width: 100px;
         height: 100px;
-        background-color: white;
+        /* background-color: white; */
         float: left;
         clear: right;
         margin: 3%;
@@ -616,41 +616,6 @@ body {
     #about-parallax{
         background: url('../images/office-chair.jpg');
         height: 150px;
-        background-position: fixed;
-        background-size: cover;
-    }
-
-    #about-parallax > h3 {
-        padding-top: 6%;
-        font-size: 180%;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
-
-    .about {
-        margin:5% 0;
-    }
-
-    .about > p {
-        line-height: 30px;
-        font-weight: 300;
-        font-size: 89%;
-    }
-
-    /* office layout */
-    #office-layout-parallax {
-        height: 800px;
-        background: url('../images/office-layout.jpg');
-        background-position: fixed;
-        background-size: cover;
-
-    }
-
-    /* about us  */
-    #about-parallax{
-        background: url('../images/office-chair.jpg');
-        height: 150px;
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
@@ -724,7 +689,41 @@ body {
         font-style: italic;
         margin-top: 2%;
     }
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
 
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 15%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 5% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
@@ -750,29 +749,30 @@ body {
         margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
         padding: 5% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
-        color: black;
-        font-weight: 300;
-        font-size: 140%;
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        width: 60%;
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
+    .btc-address > h5 {
+        margin-top: 10%
     }
+    
+    
 
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
 
-    .deposit-amount-form {
-        margin-bottom: 3%;
-    }
+    
 }
 
 
@@ -813,6 +813,7 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
+        box-shadow: 0 3000px #000 inset;
     }
 
 
@@ -894,50 +895,6 @@ body {
         /* padding: 0 2%; */
         text-align: center;
     }
-/* superior traders operation */
-    #s-t-o-background {
-        clear: both;
-        background: rgb(32,32,64);
-        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 35%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
-        padding: 5% 0;
-        line-height: 2;
-    }
-    #s-t-o-header {
-        font-size: 220%;
-        font-weight: bold;
-        padding: 4% 0;
-        padding-top: 8%;
-    }
-
-    .services-image{
-        background-color: white;
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        border-radius: 50%;
-        padding-top: 8%;
-    }
-
-    .services-image > svg {
-        color: black;
-        font-size: 250%;
-        z-index: 5;
-    }
-
-    .services-message {
-        margin: 10% 0;
-    }
-
-    .services-message > h4 {
-        font-weight: bold;
-    }
-
-    .services-message > span {
-        font-weight: 300;
-        font-size: 90%;
-    }
-
-
 
     /* plans */
 
@@ -1128,7 +1085,6 @@ body {
         margin-bottom: 4%;
     }
 
-
     /* registration form */
 
     #registration-main-background {
@@ -1177,7 +1133,6 @@ body {
         margin-bottom: 4%;
     }
 
-    
     /* dashboard */
 
 
@@ -1396,7 +1351,7 @@ body {
 
      /* rules and agreements */
      #rules-agreement-parallax{
-        background: url('../images/office-chair.png');
+        background: url('../images/office-chair.jpg');
         height: 150px;
         background-position: fixed;
         background-size: cover;
@@ -1515,14 +1470,52 @@ body {
         margin-top: 2%;
         text-align: center;
     }
-    
+
+
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
+
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 20%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 7% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
 
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
         background-color: #fff;
         height: 90px;
-        padding-top: 7%;
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
     .deposit-balance-name {
         float: left;
@@ -1538,30 +1531,26 @@ body {
     
     
     .deposit-content-background {
-        margin-top: 10%;
+        margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
         padding: 5% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
-        color: black;
-        font-weight: 300;
-        font-size: 140%;
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        /* width: 60%; */
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
-    }
-
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .deposit-amount-form {
-        margin-bottom: 10%;
+    .btc-address > h5 {
+        margin-top: 10%
     }
 }

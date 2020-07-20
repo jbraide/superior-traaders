@@ -170,3 +170,7 @@ def deposit(request):
         'form': form
     }
     return render(request, 'main/deposit.html', context)
+
+
+def transaction(request):
+    return render(request, 'main/transactions.html')

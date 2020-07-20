@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Deposit</title>
+    <title>Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,12 +23,6 @@
     <script>
         new WOW().init();
       </script>
-
-    <!-- clipboard js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script>
-        new ClipboardJS('#copy-button')
-    </script>
 </head>
 
 <body>
@@ -48,7 +42,7 @@
                         <a href=""><span class="fa fa-home mr-3"></span> Home</a>
                     </li>
                     <li>
-                        <a href=""><span class="fa fa-user mr-3"></span> Request Withdrawal</a>
+                        <a href=""><span class="fa fa-user mr-3"></span> Make a Transaction</a>
                     </li>
                     <li>
                         <a href=""><span class="fa fa-briefcase mr-3"></span> User Profile</a>
@@ -63,8 +57,7 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            
-               <!-- slider-chart -->
+            <!-- slider-chart -->
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container ">
                 <div class="tradingview-widget-container__widget"></div>
@@ -94,8 +87,9 @@
                 </script>
             </div>
             <!-- TradingView Widget END -->
-            
-            <div class="greetings greeting-deposit">
+
+            <!-- greetings -->
+            <div class="greetings">
                 <div class="container">
                     <div class="greeting-name wow slideInDown">
                         <h3 class="wow slideInUp" data-wow-duration="1.3s">User</h3>
@@ -107,42 +101,55 @@
                 </div>
             </div>
 
-            <br>
+            <!-- end greetings -->
 
-            <div class="deposit-balance-info-background">
-                <div class="container">
-                        <div class="deposit-balance-name">
-                            <h3>Balance</h3>
+            <!-- Make Deposit -->
+            <div class="transaction container text-center">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="deposit-box" class="common-box">
+                            <span class="fas fa-wallet"></span>
+                            <h4 id="deposit-header">
+                                Make a Deposit
+                            </h4>
+                            <a href="" class="btn btn-success" id="deposit-button">Let's GO</a>
                         </div>
-                        <div class="deposit-balance-amount">
-                            <span>$ 0.00</span>
+                    </div>
+                    <!-- make withdrawal  -->
+                    <div class="col-lg-6">
+                        <div id="withdrawal-box" class="common-box">
+                            <span class="fas fa-wallet"></span> 
+                            <h4 id="withdraw-header">
+                                Withdraw Money
+                            </h4>
+                            <a href="" class="btn btn-success" id="deposit-button">Let's GO</a>
                         </div>
-                </div>                
-            </div>
-
-            <div class="deposit-content-background text-center">
-                <div class="container">
-                    <div class="btc-info">
-                        <h3>Kindly Make your Payment to the Bitcoin Address Below.</h3>
-                        <!-- <div class="btc-address">
-                           <h5 id="wallet-id">1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z</h5> 
-                        </div> -->
-
-                        <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
-                <button id="copy-button" data-clipboard-target="#wallet-id">
-                    <span class="tooltiptext" id="myTooltip">
-                        Copy to Clipboard
-                    </span>
-                    <i class="far fa-copy"></i>
-                </button>
-                    </div>                    
+                    </div>    
                 </div>
-            </div>
-        </div>
-        <script src="./static/js/jquery.min.js"></script>
-        <script src="./static/js/popper.js"></script>
-        <script src="./static/js/bootstrap.min.js"></script>
-        <script src="./static/js/main.js"></script>     
-        
+                </div>
+            
+
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/popper.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/main.js"></script>
+    
+    <!-- owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            dots: false,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                }
+            }
+        })
+    </script>
 </body>
+
 </html>

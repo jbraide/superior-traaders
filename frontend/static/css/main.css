@@ -689,7 +689,41 @@ body {
         font-style: italic;
         margin-top: 2%;
     }
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
 
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 15%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 5% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
@@ -715,31 +749,30 @@ body {
         margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
         padding: 5% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
-        color: black;
-        font-weight: 300;
-        font-size: 140%;
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        width: 60%;
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
+    .btc-address > h5 {
+        margin-top: 10%
     }
-
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .deposit-amount-form {
-        margin-bottom: 3%;
-    }
+    
+    
 
 
+    
 }
 
 
@@ -1438,12 +1471,51 @@ body {
         text-align: center;
     }
 
+
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
+
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 20%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 7% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
         background-color: #fff;
         height: 90px;
-        padding-top: 7%;
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
     .deposit-balance-name {
         float: left;
@@ -1459,30 +1531,26 @@ body {
     
     
     .deposit-content-background {
-        margin-top: 10%;
+        margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
         padding: 5% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
-        color: black;
-        font-weight: 300;
-        font-size: 140%;
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        /* width: 60%; */
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
-    }
-
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .deposit-amount-form {
-        margin-bottom: 10%;
+    .btc-address > h5 {
+        margin-top: 10%
     }
 }
