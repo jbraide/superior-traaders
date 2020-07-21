@@ -51,8 +51,11 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
-        box-shadow: 0 3000px #000 inset;
+        /* box-shadow: 0 3000px #000 inset; */
+        -webkit-filter: grayscale(90%);
+        -webkit-filter: brightness(50%);
     }
+
 
 
     /* about section */
@@ -813,8 +816,11 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
-        box-shadow: 0 3000px #000 inset;
+        /* box-shadow: 0 3000px #000 inset; */
+        -webkit-filter: grayscale(90%);
+        -webkit-filter: brightness(50%);
     }
+
 
 
     /* about section */
