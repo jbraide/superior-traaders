@@ -41,6 +41,7 @@ body {
         background-color: black;
         height: 60px;
         width: 100%;
+        padding-top: 1%;
     }
 
 
@@ -772,8 +773,50 @@ body {
     }
     
     
+    /* withdrawal */
+    .deposit-balance-info-background {
+        clear: both;
+        background-color: #fff;
+        height: 90px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .deposit-balance-name {
+        float: left;
+    }
+    .deposit-balance-amount  {
+        float: right;
+    }
 
+    .deposit-balance-amount > span {
+        color: black;
+        font-size: 150%;
+    }
+    
+    
+    .deposit-content-background {
+        margin-top: 5%;
+        clear: both;
+        background-color:white;
+        padding: 5% 6%;
+        padding-left: 3%;
+    }
 
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        width: 60%;
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
+    }
+
+    .btc-address > h5 {
+        margin-top: 10%
+    }
     
 }
 

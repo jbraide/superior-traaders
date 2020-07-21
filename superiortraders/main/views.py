@@ -64,8 +64,9 @@ def dashboard(request):
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        picture = ProfileForm(instance=request.user.profile, data=request.POST, files=request.FILES)
-        if form.is_valid() and picture.is_valid:
+        # picture = ProfileForm(instance=request.user, data=request.POST, files=request.FILES)
+        if form.is_valid():
+        # if form.is_valid() and picture.is_valid():
             user = form.save()
             
             user.refresh_from_db()
@@ -78,7 +79,7 @@ def register(request):
             # id = user.id
             # print(id)
             # user.profile.profile_picture = picture.cleaned_data['profile_picture']
-            picture.save()
+            # picture.save()
             user.save()
 
             # auto login
