@@ -1,4 +1,5 @@
 {% extends 'dashboard/dashboard-base.html' %}
+{% block title %}Deposit{% endblock %}
 {% block dashboard %}
 <body>
 
@@ -18,79 +19,86 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             
-               <!-- slider-chart -->
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container ">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                    {
-                        "symbols": [{
-                            "proName": "FOREXCOM:SPXUSD",
-                            "title": "S&P 500"
-                        }, {
-                            "proName": "FOREXCOM:NSXUSD",
-                            "title": "Nasdaq 100"
-                        }, {
-                            "proName": "FX_IDC:EURUSD",
-                            "title": "EUR/USD"
-                        }, {
-                            "proName": "BITSTAMP:BTCUSD",
-                            "title": "BTC/USD"
-                        }, {
-                            "proName": "BITSTAMP:ETHUSD",
-                            "title": "ETH/USD"
-                        }],
-                        "colorTheme": "light",
-                        "isTransparent": false,
-                        "displayMode": "adaptive",
-                        "locale": "en"
-                    }
-                </script>
-            </div>
-            <!-- TradingView Widget END -->
-            
-            <div class="greetings greeting-deposit">
-                <div class="container">
-                    <div class="greeting-name wow slideInDown">
-                        <h3 class="wow slideInUp" data-wow-duration="1.3s">User</h3>
-                        <span>Good Morning </span> <img src="./static/images/icons/sunrise.png" alt="" class="ml-3">
-                    </div>
-                    <div class="account-profile-circle ">
-                        <i class="fas fa-user wow lightSpeedIn"></i>
-                    </div>
-                </div>
-            </div>
+            <!-- slider-chart -->
+         <!-- TradingView Widget BEGIN -->
+         <div class="tradingview-widget-container ">
+             <div class="tradingview-widget-container__widget"></div>
+             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                 {
+                     "symbols": [{
+                         "proName": "FOREXCOM:SPXUSD",
+                         "title": "S&P 500"
+                     }, {
+                         "proName": "FOREXCOM:NSXUSD",
+                         "title": "Nasdaq 100"
+                     }, {
+                         "proName": "FX_IDC:EURUSD",
+                         "title": "EUR/USD"
+                     }, {
+                         "proName": "BITSTAMP:BTCUSD",
+                         "title": "BTC/USD"
+                     }, {
+                         "proName": "BITSTAMP:ETHUSD",
+                         "title": "ETH/USD"
+                     }],
+                     "colorTheme": "light",
+                     "isTransparent": false,
+                     "displayMode": "adaptive",
+                     "locale": "en"
+                 }
+             </script>
+         </div>
+         <!-- TradingView Widget END -->
+         
+         <div class="greetings greeting-deposit">
+             <div class="container">
+                 <div class="greeting-name wow slideInDown">
+                     <h3 class="wow slideInUp" data-wow-duration="1.3s">User</h3>
+                     <span>Good Morning </span> <img src="./static/images/icons/sunrise.png" alt="" class="ml-3">
+                 </div>
+                 <div class="account-profile-circle ">
+                     <i class="fas fa-user wow lightSpeedIn"></i>
+                 </div>
+             </div>
+         </div>
 
-            <br>
+         <br>
 
-            <div class="deposit-balance-info-background">
-                <div class="container">
-                        <div class="deposit-balance-name">
-                            <h3>Balance</h3>
-                        </div>
-                        <div class="deposit-balance-amount">
-                            <span>$ 0.00</span>
-                        </div>
-                </div>                
-            </div>
+         <div class="deposit-balance-info-background">
+             <div class="container">
+                     <div class="deposit-balance-name">
+                         <h3>Balance</h3>
+                     </div>
+                     <div class="deposit-balance-amount">
+                         <span>$ 0.00</span>
+                     </div>
+             </div>                
+         </div>
 
-            <div class="deposit-content-background text-center">
-                <div class="container">
-                    <div class="btc-info">
-                        <h3>Kindly Make your Payment to the Bitcoin Address Below.</h3>
-                        <!-- <div class="btc-address">
-                           <h5 id="wallet-id">1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z</h5> 
-                        </div> -->
+         <div class="deposit-content-background text-center">
+             <div class="container">
+                 <div class="btc-info">
+                     <h3>Kindly Make your Payment to the Bitcoin Address Below.</h3>
+                     <!-- <div class="btc-address">
+                        <h5 id="wallet-id">1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z</h5> 
+                     </div> -->
 
-                        <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
-                <button id="copy-button" data-clipboard-target="#wallet-id">
-                    <span class="tooltiptext" id="myTooltip">
-                        Copy to Clipboard
-                    </span>
-                    <i class="far fa-copy"></i>
-                </button>
-                    </div>                    
-                </div>
-            </div>
-        </div>
+                     <!-- <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
+             <button id="copy-button" data-clipboard-target="#wallet-id">
+                 <span class="tooltiptext" id="myTooltip">
+                     Copy to Clipboard
+                 </span>
+                 <i class="far fa-copy"></i>
+             </button> -->
+
+             <!-- The text field -->
+             <input type="text" value="1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z" id="myInput">
+
+             <!-- The button used to copy the text -->
+             <button onclick="myFunction()" class="btn btn-success btn-block copy-text">Copy text</button>
+
+                 </div>                    
+             </div>
+         </div>
+     </div>
 {% endblock %}

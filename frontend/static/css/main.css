@@ -752,13 +752,13 @@ body {
         margin-top: 5%;
         clear: both;
         background-color:white;
-        padding: 5% 6%;
+        padding: 15% 6%;
         padding-left: 3%;
     }
 
     .btc-info {
         background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
-        height: 400px;
+        height: 440px;
         width: 60%;
         margin: 0 auto;
         padding: 12% 7%;
@@ -774,50 +774,130 @@ body {
     
     
     /* withdrawal */
-    .deposit-balance-info-background {
+    .withdrawal-balance-info-background {
         clear: both;
-        background-color: #fff;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
         height: 90px;
         padding-top: 3%;
         padding-bottom: 3%;
     }
-    .deposit-balance-name {
+    .withdrawal-balance-name {
         float: left;
     }
-    .deposit-balance-amount  {
+    .withdrawal-balance-name > h3 {
+        color: whitesmoke;
+    }
+    .withdrawal-balance-amount  {
         float: right;
     }
 
-    .deposit-balance-amount > span {
-        color: black;
+    .withdrawal-balance-amount > span {
+        color: whitesmoke;
         font-size: 150%;
     }
     
     
-    .deposit-content-background {
+    .withdrawal-content-background {
         margin-top: 5%;
         clear: both;
-        background-color:white;
-        padding: 5% 6%;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        padding: 10% 6%;
         padding-left: 3%;
     }
-
-    .btc-info {
-        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
-        height: 400px;
+    
+    .withdrawal-container-box {
+        background-color: whitesmoke;
+        height: 500px;
         width: 60%;
         margin: 0 auto;
-        padding: 12% 7%;
-    }
-    
-    .btc-info > h3, .btc-address > h5{
-        color: white
     }
 
-    .btc-address > h5 {
-        margin-top: 10%
+    .withdrawal-container-box > h3{
+        padding: 0% 6%; 
+        padding-top: 12%;
+        text-transform: uppercase;
+    }
+
+    #withdrawal-wrapper {
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 2%;
     }
     
+    #withdrawal-form-box > label {
+        color: black;
+        text-align: left;
+        margin-top: 5%;
+    }
+
+    #withdrawal-form-box > .form-control  {
+        border: 1px solid grey;
+        opacity: 0.7;
+        margin-bottom: 3%;
+    }
+
+    #main-withdraw-button {
+        border-radius: 0;
+        margin-top: 12%;
+    }
+
+    .copy-text {
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 0;
+        margin-top: 4%;
+    }
+
+
+    #myInput {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: 120%;
+        width: 90%;
+        margin: 5% 0;
+    }
+    
+
+    /* copy to clipboard tooltip */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
 }
 
 
@@ -1531,7 +1611,7 @@ body {
         background-color: whitesmoke;
         height: 300px;
         background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
-
+        margin: 5% 0;
     }
 
     .common-box > span {
@@ -1582,7 +1662,7 @@ body {
         margin-top: 5%;
         clear: both;
         background-color:white;
-        padding: 5% 6%;
+        padding: 35% 6%;
         padding-left: 3%;
     }
 
@@ -1595,10 +1675,98 @@ body {
     }
     
     .btc-info > h3, .btc-address > h5{
-        color: white
+        font-size: 150%;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15%;
+        margin-top: 8%;
     }
 
     .btc-address > h5 {
         margin-top: 10%
+    }
+
+    .copy-text {
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 0;
+        margin-top: 8%;
+    }
+
+
+    #myInput {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: 120%;
+    }
+    /* withdrawal */
+    .withdrawal-balance-info-background {
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 90px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .withdrawal-balance-name {
+        float: left;
+    }
+    .withdrawal-balance-name > h3 {
+        color: whitesmoke;
+    }
+    .withdrawal-balance-amount  {
+        float: right;
+    }
+
+    .withdrawal-balance-amount > span {
+        color: whitesmoke;
+        font-size: 150%;
+    }
+    
+    
+    .withdrawal-content-background {
+        margin-top: 5%;
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        padding: 10% 6%;
+        padding-left: 3%;
+    }
+    
+    .withdrawal-container-box {
+        background-color: whitesmoke;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .withdrawal-container-box > h3{
+        padding: 0% 6%; 
+        padding-top: 16%;
+        text-transform: uppercase;
+        padding-bottom: 8%;
+    }
+
+    #withdrawal-wrapper {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 2%;
+    }
+    
+    #withdrawal-form-box > label {
+        color: black;
+        text-align: left;
+        margin-top: 5%;
+    }
+
+    #withdrawal-form-box > .form-control  {
+        border: 1px solid grey;
+        opacity: 0.7;
+        margin-bottom: 10%;
+    }
+
+    #main-withdraw-button {
+        border-radius: 0;
+        margin-top: 12%;
     }
 }

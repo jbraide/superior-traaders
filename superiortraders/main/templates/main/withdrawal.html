@@ -1,19 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Dashboard</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <link rel="stylesheet" href="./static/css/style.css">
-    <link rel="stylesheet" href="./static/css/main.css">
-</head>
-
-<body>
+{% extends 'dashboard/dashboard-base.html' %}
+{% block title %}Withdraw{% endblock %}
+{% block dashboard %}
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
@@ -45,53 +32,80 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
+            
+               <!-- slider-chart -->
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container ">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{
+                            "proName": "FOREXCOM:SPXUSD",
+                            "title": "S&P 500"
+                        }, {
+                            "proName": "FOREXCOM:NSXUSD",
+                            "title": "Nasdaq 100"
+                        }, {
+                            "proName": "FX_IDC:EURUSD",
+                            "title": "EUR/USD"
+                        }, {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        }, {
+                            "proName": "BITSTAMP:ETHUSD",
+                            "title": "ETH/USD"
+                        }],
+                        "colorTheme": "light",
+                        "isTransparent": false,
+                        "displayMode": "adaptive",
+                        "locale": "en"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+            
+            <div class="greetings greeting-deposit">
+                <div class="container">
+                    <div class="greeting-name wow slideInDown">
+                        <h3 class="wow slideInUp" data-wow-duration="1.3s">User</h3>
+                        <span>Good Morning </span> <img src="./static/images/icons/sunrise.png" alt="" class="ml-3">
+                    </div>
+                    <div class="account-profile-circle ">
+                        <i class="fas fa-user wow lightSpeedIn"></i>
+                    </div>
+                </div>
+            </div>
 
+            <br>
+
+            <div class="withdrawal-balance-info-background">
+                <div class="container">
+                        <div class="withdrawal-balance-name">
+                            <h3>Balance</h3>
+                        </div>
+                        <div class="withdrawal-balance-amount">
+                            <span>$ 0.00</span>
+                        </div>
+                </div>                
+            </div>
+
+            <div class="withdrawal-content-background ">
+                <div class="container">
+                    <div class="withdrawal-container-box">
+                        <h3 class="text-center">Fill in details to make Withdrawal</h3>
+                        <div id="withdrawal-wrapper">
+                            <form action="" class="form-group" id="withdrawal-form-box">
+                                <label for="">Amount</label>
+                                <input type="number" class="form-control">
+    
+                                <label for="">Password</label>
+                                <input type="password" name=""class="form-control">
+    
+                                <button type="submit" class="btn btn-success btn-block" id="main-withdraw-button">withdraw</button>
+                            </form>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
         </div>
-    </div>
-
-    <script src="./static/js/jquery.min.js"></script>
-    <script src="./static/js/popper.js"></script>
-    <script src="./static/js/bootstrap.min.js"></script>
-    <script src="./static/js/main.js"></script>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget({
-            "width": 500,
-            "height": 300,
-            "symbol": "EURUSD",
-            "interval": "D",
-            "timezone": "Etc/UTC",
-            "theme": "dark",
-            "style": "3",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "allow_symbol_change": true,
-            "container_id": "tradingview_4118c",
-
-        });
-    </script>
-
-    <!-- <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
-        {
-            "width": 500,
-            "height": 300,
-            "currencies": [
-                "EUR",
-                "USD",
-                "JPY",
-                "GBP",
-                "CHF",
-                "AUD",
-                "CAD",
-                "NZD",
-                "CNY"
-            ],
-            "isTransparent": false,
-            "colorTheme": "light",
-            "locale": "en"
-        }
-    </script> -->
-</body>
-
-</html>
+    {% endblock %}

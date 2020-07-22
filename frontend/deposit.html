@@ -25,10 +25,10 @@
       </script>
 
     <!-- clipboard js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
     <script>
         new ClipboardJS('#copy-button')
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -128,13 +128,20 @@
                            <h5 id="wallet-id">1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z</h5> 
                         </div> -->
 
-                        <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
+                        <!-- <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
                 <button id="copy-button" data-clipboard-target="#wallet-id">
                     <span class="tooltiptext" id="myTooltip">
                         Copy to Clipboard
                     </span>
                     <i class="far fa-copy"></i>
-                </button>
+                </button> -->
+
+                <!-- The text field -->
+                <input type="text" value="1BZMTB5hrdegkLnPqvysqhqumUHMGykf5z" id="myInput">
+
+                <!-- The button used to copy the text -->
+                <button onclick="myFunction()" class="btn btn-success btn-block copy-text">Copy text</button>
+
                     </div>                    
                 </div>
             </div>
@@ -143,6 +150,19 @@
         <script src="./static/js/popper.js"></script>
         <script src="./static/js/bootstrap.min.js"></script>
         <script src="./static/js/main.js"></script>     
+        <script>
+            function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+            }
+        </script>
         
 </body>
 </html>
