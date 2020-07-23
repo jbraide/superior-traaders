@@ -41,6 +41,7 @@ body {
         background-color: black;
         height: 60px;
         width: 100%;
+        padding-top: 1%;
     }
 
 
@@ -51,6 +52,9 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
+        /* box-shadow: 0 3000px #000 inset; */
+        -webkit-filter: grayscale(90%);
+        -webkit-filter: brightness(50%);
     }
 
 
@@ -84,6 +88,7 @@ body {
         margin-top: 9%;
         line-height: 2;
     }
+
     /* superior traders operation */
     #s-t-o-background {
         clear: both;
@@ -119,14 +124,12 @@ body {
 
     .services-message > span {
         font-weight: 300;
+        line-height: 2;
     }
-
-
 
     /* plans */
 
     .plans {
-        clear: both;
         background-color: #602080;
         padding: 5% 0
     }
@@ -159,7 +162,7 @@ body {
 
     .plan-body>p {
         font-size: 80%;
-        font-weight: 4z00;
+        font-weight: 400;
     }
 
 
@@ -230,7 +233,8 @@ body {
 
     #column-1>p {
         font-weight: 300;
-        font-size: 85%
+        font-size: 85%;
+        line-height: 2;
     }
 
     .column-2>a {
@@ -290,18 +294,66 @@ body {
         clear: right;
         width: 50%;
         height: 500px;
-        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background: url('/frontend/static/images/beach-calm-clouds-coast-457881.jpg');
     }
 
     #login-form {
         width: 50%;
         float: right;
         color: black;
-        margin-top: 9%;
+        margin-top: 12%;
     }
 
     #login-form>h3 {
-        margin-bottom: 6%;
+        margin-bottom: 13%;
+    }
+
+    .sign-in-button {
+        margin: 3% 0%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 4%;
+    }
+
+    /* registration form */
+
+    #registration-main-background {
+        background: linear-gradient(106deg, rgba(32, 32, 64, 1) 00%, rgba(176, 48, 176, 1) 60%);
+        width: 100%;
+        padding: 5% 0;
+    }
+
+    #registration-form-area {
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #registration-img {
+        width: 100%;
+        height: 200px;
+        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    #registration-form {
+        color: black;
+        margin: 0 5%;
+        margin-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #registration-form>h3 {
+        margin-bottom: 5%;
     }
 
     .sign-in-button {
@@ -474,7 +526,7 @@ body {
     .img-white-background {
         width: 100px;
         height: 100px;
-        background-color: white;
+        /* background-color: white; */
         float: left;
         clear: right;
         margin: 3%;
@@ -567,41 +619,6 @@ body {
     #about-parallax{
         background: url('../images/office-chair.jpg');
         height: 150px;
-        background-position: fixed;
-        background-size: cover;
-    }
-
-    #about-parallax > h3 {
-        padding-top: 6%;
-        font-size: 180%;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
-
-    .about {
-        margin:5% 0;
-    }
-
-    .about > p {
-        line-height: 30px;
-        font-weight: 300;
-        font-size: 89%;
-    }
-
-    /* office layout */
-    #office-layout-parallax {
-        height: 800px;
-        background: url('../images/office-layout.jpg');
-        background-position: fixed;
-        background-size: cover;
-
-    }
-
-    /* about us  */
-    #about-parallax{
-        background: url('../images/office-chair.jpg');
-        height: 150px;
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
@@ -675,7 +692,41 @@ body {
         font-style: italic;
         margin-top: 2%;
     }
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
 
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 15%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 5% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
@@ -701,29 +752,152 @@ body {
         margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
-        padding: 5% 6%;
+        padding: 15% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 440px;
+        width: 60%;
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        color: white
+    }
+
+    .btc-address > h5 {
+        margin-top: 10%
+    }
+    
+    
+    /* withdrawal */
+    .withdrawal-balance-info-background {
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 90px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .withdrawal-balance-name {
+        float: left;
+    }
+    .withdrawal-balance-name > h3 {
+        color: whitesmoke;
+    }
+    .withdrawal-balance-amount  {
+        float: right;
+    }
+
+    .withdrawal-balance-amount > span {
+        color: whitesmoke;
+        font-size: 150%;
+    }
+    
+    
+    .withdrawal-content-background {
+        margin-top: 5%;
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        padding: 10% 6%;
+        padding-left: 3%;
+    }
+    
+    .withdrawal-container-box {
+        background-color: whitesmoke;
+        height: 500px;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .withdrawal-container-box > h3{
+        padding: 0% 6%; 
+        padding-top: 12%;
+        text-transform: uppercase;
+    }
+
+    #withdrawal-wrapper {
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 2%;
+    }
+    
+    #withdrawal-form-box > label {
         color: black;
-        font-weight: 300;
-        font-size: 140%;
+        text-align: left;
+        margin-top: 5%;
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
-    }
-
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .deposit-amount-form {
+    #withdrawal-form-box > .form-control  {
+        border: 1px solid grey;
+        opacity: 0.7;
         margin-bottom: 3%;
     }
+
+    #main-withdraw-button {
+        border-radius: 0;
+        margin-top: 12%;
+    }
+
+    .copy-text {
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 0;
+        margin-top: 4%;
+    }
+
+
+    #myInput {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: 120%;
+        width: 90%;
+        margin: 5% 0;
+    }
+    
+
+    /* copy to clipboard tooltip */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
 }
 
 
@@ -764,7 +938,11 @@ body {
 
     img.d-block.w-100 {
         height: 519px;
+        /* box-shadow: 0 3000px #000 inset; */
+        -webkit-filter: grayscale(90%);
+        -webkit-filter: brightness(50%);
     }
+
 
 
     /* about section */
@@ -793,6 +971,11 @@ body {
 
     .about-right>p {
         margin-top: 9%;
+        font-size: 96%;
+        line-height: 2;
+        padding: 0 4%;
+        text-align: center;
+        padding-bottom: 5%;
     }
 
     /* superior traders operation */
@@ -826,7 +1009,7 @@ body {
     }
 
     .services-message {
-        margin: 10% 0;
+        margin: 10% 8%;
     }
 
     .services-message > h4 {
@@ -835,52 +1018,11 @@ body {
 
     .services-message > span {
         font-weight: 300;
-        font-size: 90%;
+        font-size: 96%;
+        line-height: 3;
+        /* padding: 0 2%; */
+        text-align: center;
     }
-/* superior traders operation */
-    #s-t-o-background {
-        clear: both;
-        background: rgb(32,32,64);
-        background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 35%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
-        padding: 5% 0;
-        line-height: 2;
-    }
-    #s-t-o-header {
-        font-size: 220%;
-        font-weight: bold;
-        padding: 4% 0;
-        padding-top: 8%;
-    }
-
-    .services-image{
-        background-color: white;
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        border-radius: 50%;
-        padding-top: 8%;
-    }
-
-    .services-image > svg {
-        color: black;
-        font-size: 250%;
-        z-index: 5;
-    }
-
-    .services-message {
-        margin: 10% 0;
-    }
-
-    .services-message > h4 {
-        font-weight: bold;
-    }
-
-    .services-message > span {
-        font-weight: 300;
-        font-size: 90%;
-    }
-
-
 
     /* plans */
 
@@ -985,7 +1127,10 @@ body {
 
     #column-1>p {
         font-weight: 300;
-        font-size: 85%
+        font-size: 85%;
+        line-height: 2;
+        margin: 0 3%;
+        margin-bottom: 4%;
     }
 
     .column-2>a {
@@ -1068,6 +1213,53 @@ body {
         margin-bottom: 4%;
     }
 
+    /* registration form */
+
+    #registration-main-background {
+        background: linear-gradient(106deg, rgba(32, 32, 64, 1) 00%, rgba(176, 48, 176, 1) 60%);
+        width: 100%;
+        padding-top: 5%;
+    }
+
+    #registration-form-area {
+        background-color: white;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #registration-img {
+        width: 100%;
+        height: 100px;
+        background: url('../images/beach-calm-clouds-coast-457881.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    #registration-form {
+        color: black;
+        margin: 0 5%;
+        margin-top: 10%;
+    }
+
+    #registration-form>h3 {
+        margin-bottom: 10%;
+        text-transform: uppercase;
+    }
+
+    .sign-in-button {
+        margin: 3% 0%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 4%;
+    }
 
     /* dashboard */
 
@@ -1287,7 +1479,7 @@ body {
 
      /* rules and agreements */
      #rules-agreement-parallax{
-        background: url('../images/office-chair.png');
+        background: url('../images/office-chair.jpg');
         height: 150px;
         background-position: fixed;
         background-size: cover;
@@ -1406,14 +1598,52 @@ body {
         margin-top: 2%;
         text-align: center;
     }
-    
+
+
+    /* transactions */
+    .transaction {
+        clear: both;
+        padding-top: 8%;
+    }
+
+
+    .common-box {
+        background-color: whitesmoke;
+        height: 300px;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        margin: 5% 0;
+    }
+
+    .common-box > span {
+        font-size: 200%;
+        padding: 3% 0 ;
+        padding-top: 20%;
+    }
+
+    #withdrawal-button, #deposit-button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0;
+        padding-top: 3% 0;
+    }
+
+    #withdraw-header, #deposit-header {
+        color: whitesmoke;
+        padding: 7% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
 
     /* deposit */
     .deposit-balance-info-background {
         clear: both;
         background-color: #fff;
         height: 90px;
-        padding-top: 7%;
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
     .deposit-balance-name {
         float: left;
@@ -1429,30 +1659,114 @@ body {
     
     
     .deposit-content-background {
-        margin-top: 10%;
+        margin-top: 5%;
         clear: both;
         background-color:white;
-        /* height: 300px; */
-        padding: 5% 6%;
+        padding: 35% 6%;
         padding-left: 3%;
-
     }
 
-    .col-lg-6 > label, .deposit-amount-form > label {
+    .btc-info {
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 400px;
+        /* width: 60%; */
+        margin: 0 auto;
+        padding: 12% 7%;
+    }
+    
+    .btc-info > h3, .btc-address > h5{
+        font-size: 150%;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15%;
+        margin-top: 8%;
+    }
+
+    .btc-address > h5 {
+        margin-top: 10%
+    }
+
+    .copy-text {
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 0;
+        margin-top: 8%;
+    }
+
+
+    #myInput {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: 120%;
+    }
+    /* withdrawal */
+    .withdrawal-balance-info-background {
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        height: 90px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .withdrawal-balance-name {
+        float: left;
+    }
+    .withdrawal-balance-name > h3 {
+        color: whitesmoke;
+    }
+    .withdrawal-balance-amount  {
+        float: right;
+    }
+
+    .withdrawal-balance-amount > span {
+        color: whitesmoke;
+        font-size: 150%;
+    }
+    
+    
+    .withdrawal-content-background {
+        margin-top: 5%;
+        clear: both;
+        background: linear-gradient(120deg, rgba(238,69,64,1) 7%, rgba(199,44,65,1) 33%, rgba(128,19,54,1) 54%, rgba(45,19,44,1) 81%);
+        padding: 10% 6%;
+        padding-left: 3%;
+    }
+    
+    .withdrawal-container-box {
+        background-color: whitesmoke;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .withdrawal-container-box > h3{
+        padding: 0% 6%; 
+        padding-top: 16%;
+        text-transform: uppercase;
+        padding-bottom: 8%;
+    }
+
+    #withdrawal-wrapper {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 2%;
+    }
+    
+    #withdrawal-form-box > label {
         color: black;
-        font-weight: 300;
-        font-size: 140%;
+        text-align: left;
+        margin-top: 5%;
     }
 
-    .col-lg-6 > select {
-        border: 1px solid #ccc
-    }
-
-    .deposit-amount-form > input {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .deposit-amount-form {
+    #withdrawal-form-box > .form-control  {
+        border: 1px solid grey;
+        opacity: 0.7;
         margin-bottom: 10%;
+    }
+
+    #main-withdraw-button {
+        border-radius: 0;
+        margin-top: 12%;
     }
 }

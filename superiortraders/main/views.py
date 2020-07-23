@@ -5,7 +5,7 @@ from django.contrib.auth import login as auth_login
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegistrationForm, LoginForm, DepositForm, ProfileForm
+from .forms import RegistrationForm, LoginForm, DepositForm, ProfileForm, WithdrawalForm
 
 # models
 from .models import Balance, Signals, AccountType, InvestedAmount
@@ -18,6 +18,9 @@ from django.contrib.auth.forms import PasswordChangeForm
 # time, dateteime
 # import time
 import datetime
+
+# withdrawal
+from django.contrib.auth.hashers import check_password
 
 
 def index(request):
@@ -152,26 +155,49 @@ def account(request):
 from django.contrib import messages
 # Deposit function 
 def deposit(request):
-    if request.method == 'POST':
-        form = DepositForm(request.POST)
-        if form.is_valid():
-            form.save
-            messages.error(request,'Deposit error Contact admin at support@superior-traders.com')
-            return redirect('main:dashboard')
-
-        else: 
-            errors = form.errors
-            print(errors)
-
-
-    else:
-        form = DepositForm()
+    user = request.user
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
 
     context = {
-        'form': form
+        'balance': balance,
     }
     return render(request, 'main/deposit.html', context)
 
-
+# transactions view 
 def transaction(request):
     return render(request, 'main/transactions.html')
+
+# withdrawal fn
+@login_required(login_url='/login')
+def Withdrawal(request): 
+    user = request.user
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    form = WithdrawalForm(request.POST)
+    userPassword = request.user.password
+    if request.method == 'POST':
+        messages.error(request, 'There was a problem with the withdrawal contact support')
+        
+        if form.is_valid():
+            form.save(commit=False)
+            password = form.cleaned_data.get('password')
+
+            match_password = check_password(password, userPassword)
+            # messages.success(request, 'Withdraw Successful')
+            
+            if match_password:
+                print('passwords matched')
+                form.save()
+                return redirect('main:dashboard')
+            else:
+                print('problem with matching password')
+        else: 
+            print('error')
+    else:
+        form = WithdrawalForm()
+
+    context = {
+        'form': form,
+        'balance': balance,
+    }
+
+    return render(request, 'main/withdrawal.html', context )

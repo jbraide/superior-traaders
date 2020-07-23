@@ -89,3 +89,6 @@ class Deposit(models.Model):
         verbose_name_plural = 'Signals'
 
 
+class Withdraw(models.Model):
+    amount = models.DecimalField(max_digits=10, decimal_places=2)    
+    password = models.CharField(max_length=30, default = '')

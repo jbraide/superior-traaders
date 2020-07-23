@@ -1,5 +1,6 @@
 {% extends 'dashboard/dashboard-base.html' %}
 {% block title %}Withdraw{% endblock %}
+{% load widget_tweaks %}
 {% block dashboard %}
 
     <div class="wrapper d-flex align-items-stretch">
@@ -11,21 +12,7 @@
                     </button>
             </div>
             <div class="p-4">
-                <h1><a href="index.html" class="logo">Portfolic <span>Portfolio Agency</span></a></h1>
-                <ul class="list-unstyled components mb-5">
-                    <li class="active">
-                        <a href=""><span class="fa fa-home mr-3"></span> Home</a>
-                    </li>
-                    <li>
-                        <a href=""><span class="fa fa-user mr-3"></span> Request Withdrawal</a>
-                    </li>
-                    <li>
-                        <a href=""><span class="fa fa-briefcase mr-3"></span> User Profile</a>
-                    </li>
-                    <li>
-                        <a href=""><span class="fa fa-sticky-note mr-3"></span>Logout</a>
-                    </li>
-                </ul>
+                {% include 'dashboard/sidebar.html' %}
 
             </div>
         </nav>
@@ -82,10 +69,13 @@
                 <div class="container">
                         <div class="withdrawal-balance-name">
                             <h3>Balance</h3>
-                        </div>
-                        <div class="withdrawal-balance-amount">
+                            {% if balance %}
+                            <span>$ {{ balance.amount }}</span>
+                           {% else %}
                             <span>$ 0.00</span>
+                           {% endif %}
                         </div>
+                        
                 </div>                
             </div>
 
@@ -94,12 +84,12 @@
                     <div class="withdrawal-container-box">
                         <h3 class="text-center">Fill in details to make Withdrawal</h3>
                         <div id="withdrawal-wrapper">
-                            <form action="" class="form-group" id="withdrawal-form-box">
-                                <label for="">Amount</label>
-                                <input type="number" class="form-control">
-    
-                                <label for="">Password</label>
-                                <input type="password" name=""class="form-control">
+                            <form action="" class="form-group" id="withdrawal-form-box" method="POST">
+                                {% csrf_token %}
+                                <label for="">{{ form.amount.label_tag }} </label>
+                                {{ form.amount|add_class:'form-control' }}
+                                <label for="">{{ form.password.label_tag }} </label>
+                                {{ form.password|add_class:'form-control' }}
     
                                 <button type="submit" class="btn btn-success btn-block" id="main-withdraw-button">withdraw</button>
                             </form>

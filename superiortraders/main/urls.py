@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, login, logout_view, dashboard, account, register,rules, about, deposit, transaction
+from .views import index, login, logout_view, dashboard, account, register,rules, about, deposit, transaction, Withdrawal
 
 app_name = 'main'
 
@@ -12,5 +12,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('account/', account, name='account'),
     path('deposit/', deposit, name='deposit'), 
-    path('transaction/', transaction, name='transaction')
+    path('transaction/', transaction, name='transaction'),
+    path('withdraw/', Withdrawal, name='withdraw'),
 ]
