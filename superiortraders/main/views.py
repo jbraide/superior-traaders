@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm, LoginForm, DepositForm, ProfileForm, WithdrawalForm
 
 # models
-from .models import Balance, Signals, AccountType, InvestedAmount
+from .models import Balance, Signals, AccountType, InvestedAmount, BTCAddress
 from django.db.models import Sum
 
 # password reset 
@@ -68,8 +68,9 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         # picture = ProfileForm(instance=request.user, data=request.POST, files=request.FILES)
-        if form.is_valid():
-        # if form.is_valid() and picture.is_valid():
+        profile = ProfileForm(data=request.POST, files=request.FILES)
+        # if form.is_valid():
+        if form.is_valid() and profile.is_valid():
             user = form.save()
             
             user.refresh_from_db()
@@ -78,12 +79,14 @@ def register(request):
             user.profile.first_name = form.cleaned_data.get('first_name')
             user.profile.last_name = form.cleaned_data.get('last_name')
             user.profile.email = form.cleaned_data.get('email')
-
+            user.profile.profile_picture = form.cleaned_data.get('profile_picture')
+            # user.profile.country = form.cleaned_data.get('country')
             # id = user.id
             # print(id)
             # user.profile.profile_picture = picture.cleaned_data['profile_picture']
             # picture.save()
             user.save()
+            # profile.save()
 
             # auto login
             username = form.cleaned_data.get('username')
@@ -99,10 +102,10 @@ def register(request):
 
     else:
         form = RegistrationForm()
-        picture = ProfileForm()
+        profile = ProfileForm()
     context = {
         'form': form, 
-        'picture': picture
+        'profile': profile
     }
     return render(request, 'main/register.html', context)
 
@@ -157,9 +160,11 @@ from django.contrib import messages
 def deposit(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    btc_address = BTCAddress.objects.all().latest('address')
 
     context = {
         'balance': balance,
+        'btc_address': btc_address
     }
     return render(request, 'main/deposit.html', context)
 
@@ -175,7 +180,8 @@ def Withdrawal(request):
     form = WithdrawalForm(request.POST)
     userPassword = request.user.password
     if request.method == 'POST':
-        messages.error(request, 'There was a problem with the withdrawal contact support')
+        messages.success(request, 'Withdrawal pending please wait a shortwhile')
+        
         
         if form.is_valid():
             form.save(commit=False)

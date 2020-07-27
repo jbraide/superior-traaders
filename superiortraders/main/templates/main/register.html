@@ -24,9 +24,13 @@
                                 {{ field|add_class:'form-control' }}
                             </div>
                             {% endfor %}
-                            <div class="col-lg-12">
-                                <label for="">{{ picture.profile_picture.label_tag }} </label>
-                                {{ picture.profile_picture }}
+                            <!-- <div class="col-lg-6">
+                                <label for="">{{ profile.country.label_tag }} </label>
+                                {{ profile.country|add_class:'form-control' }}
+                            </div> -->
+                            <div class="col-lg-6">
+                                <label for="">{{ profile.profile_picture.label_tag }} </label>
+                                {{ profile.profile_picture|add_class:'form-control' }}
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success sign-in-button">REGISTER</button>

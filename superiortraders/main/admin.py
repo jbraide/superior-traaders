@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Balance, Deposit, InvestedAmount, AccountType, Signals
+from .models import Profile, Balance, Deposit, InvestedAmount, AccountType, Signals, BTCAddress
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -24,6 +24,12 @@ class AccountTypeAdmin(admin.ModelAdmin):
 @admin.register(Signals)
 class SignalsAdmin(admin.ModelAdmin):
     list_display = ['user','amount',]
+
+@admin.register(BTCAddress)
+class BTCAddressAdmin(admin.ModelAdmin):
+    list_display = ['address', ]
+    
+
 
 
 

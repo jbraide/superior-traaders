@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main', 
-    'widget_tweaks'
+    'widget_tweaks', 
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'main:dashboard'
+
+# django messages settings 
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.INFO: 'alert-info', 
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning', 
+    messages.ERROR: 'alert-danger'
+}

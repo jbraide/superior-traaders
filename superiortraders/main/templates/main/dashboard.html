@@ -9,14 +9,7 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
 
-            <div class="container">
-                {% if messages %}
-                    {% for message in messages  %}
-                        {{ message }}
-                    {% endfor %}
-                {% endif %}
-
-            </div>
+            
             <!-- slider-chart -->
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
@@ -47,6 +40,16 @@
                 </script>
             </div>
             <!-- TradingView Widget END -->
+            <div class="container">
+                {% if messages %}
+                    {% for message in messages  %}
+                    <span class="alert ">
+                        {{ message }}
+                    </span>    
+                    {% endfor %}
+                {% endif %}
+
+            </div>
 
             <div class="greetings">
                 <div class="container">

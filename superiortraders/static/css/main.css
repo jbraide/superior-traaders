@@ -27,7 +27,7 @@ body {
 
 
 /* Desktop version */
-@media only screen and (min-width:768px){
+@media only screen and (min-width:850px){
     /* desktop */
     .mobile {
         display: none;
@@ -916,7 +916,7 @@ body {
 
 
 /* Mobile version */
-@media only screen and (max-width:768px){
+@media only screen and (max-width:850px){
     /* mobile show */
     .desktop {
         display: none;
