@@ -43,10 +43,10 @@
             <div class="account-settings">
                 <div>
                     {% comment %} <img src="{{ user.profile.profile_picture.url|add:default }}" alt="" class="img-white-background"> {% endcomment %}
-                    {% if user.userprofile.profile_picture %}
+                    {% if user.profile.profile_picture %}
                         <img src="{{ user.profile.profile_picture.url }}" class="img-white-background">
                     {% else %}
-                        <img src="{% static 'images/man-young-happy-smiling-91227.jpg' %}" class="img-white-background">
+                    <img src="https://img.icons8.com/dotty/80/000000/add-administrator.png" class="img-white-background"/>
                     {% endif %}
                 </div>
                 <div id="account-name-title">

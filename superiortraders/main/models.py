@@ -52,19 +52,28 @@ class Profile(models.Model):
     city =  models.CharField(max_length = 100, default=False, blank=True)
     state = models.CharField(max_length=30, default= '', blank=True)
     postal_or_zip_code = models.CharField(max_length=6, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, default='/static/images/photo-of-lighthouse.jpg')
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True, default='/static/images/photo-of-lighthouse.jpg')
     status = models.BooleanField(default=False)
-    country = CountryField(blank_label='(select country)', blank=True)
+    country = CountryField(blank_label='(select country)', blank=True, null=True)
     def __str__(self):
         return self.user.username
     
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         profile = Profile(user=instance)
+#         # Profile.objects.create(user=instance)
+#     instance.profile.save()
+# post_save.connect(create_user_profile, sender=User)
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        profile = Profile(user=instance)
-        # Profile.objects.create(user=instance)
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
-post_save.connect(create_user_profile, sender=User)
 
 
 # @receiver(post_save, sender=User)

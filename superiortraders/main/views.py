@@ -63,6 +63,8 @@ def dashboard(request):
         'type': type
     }
     return render(request, 'main/dashboard.html', context)
+# importing User model
+from django.contrib.auth.models import User
 
 def register(request):
     if request.method == 'POST':
@@ -76,24 +78,27 @@ def register(request):
             user.refresh_from_db()
 
             # save form data to profile forms
+            users = str(user.id)
+            profile_data = User.objects.get(pk=users)
+
             user.profile.first_name = form.cleaned_data.get('first_name')
             user.profile.last_name = form.cleaned_data.get('last_name')
             user.profile.email = form.cleaned_data.get('email')
-            user.profile.profile_picture = form.cleaned_data.get('profile_picture')
+            profile_data.profile.profile_picture = form.cleaned_data.get('profile_picture')
+            profile_data.profile.country = form.cleaned_data.get('country')
+            print(form.cleaned_data.get('country'))
             # user.profile.country = form.cleaned_data.get('country')
             # id = user.id
             # print(id)
             # user.profile.profile_picture = picture.cleaned_data['profile_picture']
-            # picture.save()
+            profile_data.save()
             user.save()
-            # profile.save()
 
             # auto login
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user_login = authenticate(request,username=username, password=password)
             auth_login(request, user_login)
-            print('I did get here')
             return redirect('main:dashboard')
         else:
             print('Something went wrong')
@@ -157,6 +162,7 @@ def account(request):
 
 from django.contrib import messages
 # Deposit function 
+@login_required(login_url='/login')
 def deposit(request):
     user = request.user
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
