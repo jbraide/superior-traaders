@@ -85,8 +85,8 @@ def register(request):
             user.profile.last_name = form.cleaned_data.get('last_name')
             user.profile.email = form.cleaned_data.get('email')
             profile_data.profile.profile_picture = form.cleaned_data.get('profile_picture')
-            profile_data.profile.country = form.cleaned_data.get('country')
-            print(form.cleaned_data.get('country'))
+            # profile_data.profile.country = form.cleaned_data.get('country')
+            # print(form.cleaned_data.get('country'))
             # user.profile.country = form.cleaned_data.get('country')
             # id = user.id
             # print(id)
