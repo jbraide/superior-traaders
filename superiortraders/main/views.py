@@ -69,40 +69,32 @@ from django.contrib.auth.models import User
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        # picture = ProfileForm(instance=request.user, data=request.POST, files=request.FILES)
-        profile = ProfileForm(data=request.POST, files=request.FILES)
-        # if form.is_valid():
-        if form.is_valid() and profile.is_valid():
+        if form.is_valid():
             user = form.save()
-            
             user.refresh_from_db()
-
-            # save form data to profile forms
-            users = str(user.id)
-            profile_data = User.objects.get(pk=users)
-
-            user.profile.first_name = form.cleaned_data.get('first_name')
-            user.profile.last_name = form.cleaned_data.get('last_name')
-            user.profile.email = form.cleaned_data.get('email')
-            profile_data.profile.profile_picture = form.cleaned_data.get('profile_picture')
-            # profile_data.profile.country = form.cleaned_data.get('country')
-            # print(form.cleaned_data.get('country'))
-            # user.profile.country = form.cleaned_data.get('country')
-            # id = user.id
-            # print(id)
-            # user.profile.profile_picture = picture.cleaned_data['profile_picture']
-            profile_data.save()
-            user.save()
-
-            # auto login
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user_login = authenticate(request,username=username, password=password)
             auth_login(request, user_login)
-            return redirect('main:dashboard')
+
+            profile = ProfileForm(request.POST, instance=request.user.profile, files=request.FILES)
+            if profile.is_valid():
+                user.profile.first_name = form.cleaned_data.get('first_name')
+                user.profile.last_name = form.cleaned_data.get('last_name')
+                user.profile.email = form.cleaned_data.get('email')
+                user.profile.profile_picture = form.cleaned_data.get('profile_picture')
+                user.profile.country = form.cleaned_data.get('country')
+
+                user.save()
+                profile.save()
+                return redirect('main:dashboard')
+
+
+        
         else:
             print('Something went wrong')
             print(form.errors)
+            print(profile.errors)
 
 
     else:
