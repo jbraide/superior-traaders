@@ -90,7 +90,7 @@ body {
     }
 
     /* superior traders operation */
-    #s-t-o-background {
+    #s-t-o-background, #payment-options-background {
         clear: both;
         background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
         height: 700px;
@@ -897,6 +897,19 @@ body {
         visibility: visible;
         opacity: 1;
       }
+
+      /* payment optiions background */
+      #payment-options-background {
+        height: 400px;
+      }
+
+      .payment-options-images {
+        margin: 1%;
+      }
+
+      .payment-header {
+          padding-top: 3%;
+      }
 }
 
 
@@ -925,8 +938,12 @@ body {
 
     .top-header {
         background-color: black;
-        height: 60px;
         width: 100%;
+        padding: 3%;
+    }
+
+    .top-header > .container > .row > .col-lg-3{
+        margin: 1% 0;
     }
 
 
@@ -978,7 +995,7 @@ body {
     }
 
     /* superior traders operation */
-    #s-t-o-background {
+    #s-t-o-background, #payment-options-background {
         clear: both;
         background: rgb(32,32,64);
         background: linear-gradient(106deg, rgba(32,32,64,1) 0%, rgba(0,0,0,1) 55%, rgba(96,32,128,1) 70%, rgba(176,48,176,1) 93%);
@@ -1768,4 +1785,14 @@ body {
         border-radius: 0;
         margin-top: 12%;
     }
+
+    /* payment options */
+    .payment-options-images{
+        margin: 3% 2%;
+    }
+
+    .payment-header{
+        font-size: 180%;
+    }
+
 }
