@@ -91,10 +91,10 @@ def register(request):
 
 
         
-        else:
-            print('Something went wrong')
-            print(form.errors)
-            print(profile.errors)
+            else:
+                print('Something went wrong')
+                print(form.errors)
+                print(profile.errors)
 
 
     else:
