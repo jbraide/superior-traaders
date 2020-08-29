@@ -43,11 +43,15 @@ class Notification(models.Model):
 
 
 # profile
+# phone number field 
+from phonenumber_field.modelfields import PhoneNumberField
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length=23, default='', blank=True)
     last_name = models.CharField(max_length=23, default='', blank=True)
     email = models.EmailField(max_length=50)
+    phone_number = PhoneNumberField(blank=True, help_text='Contact phone number')
     street_address = models.CharField(max_length=150, default='', blank=True)
     city =  models.CharField(max_length = 100, default=False, blank=True)
     state = models.CharField(max_length=30, default= '', blank=True)

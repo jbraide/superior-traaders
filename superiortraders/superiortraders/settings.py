@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main', 
     'widget_tweaks', 
     'django_countries',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,10 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning', 
     messages.ERROR: 'alert-danger'
 }
+
+
+EMAIL_HOST ='smtp.superior-traders.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'support@superior-traders.com'
+EMAIL_HOST_PASSWORD = 'c55h?xj}W#Zy'
+EMAIL_USE_SSL =  False

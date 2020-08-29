@@ -23,7 +23,7 @@ from django_countries.widgets import CountrySelectWidget
 class ProfileForm(forms.ModelForm):
     class Meta: 
         model = Profile
-        fields = ('first_name', 'last_name', 'email', 'street_address','city', 'state', 'postal_or_zip_code', 'profile_picture', 'country')
+        fields = ('first_name', 'last_name', 'email','phone_number', 'street_address','city', 'state', 'postal_or_zip_code', 'profile_picture', 'country')
         widgets = {
             'country': CountrySelectWidget()
         }

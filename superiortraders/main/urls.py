@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import index, login, logout_view, dashboard, account, register,rules, about, deposit, transaction, Withdrawal
-
+from .views import mail_test
 app_name = 'main'
 
 urlpatterns = [
@@ -14,4 +14,7 @@ urlpatterns = [
     path('deposit/', deposit, name='deposit'), 
     path('transaction/', transaction, name='transaction'),
     path('withdraw/', Withdrawal, name='withdraw'),
+
+    # send mail test link
+    path('mail/test', mail_test, name='mail_test')
 ]

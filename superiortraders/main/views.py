@@ -205,3 +205,11 @@ def Withdrawal(request):
     }
 
     return render(request, 'main/withdrawal.html', context )
+
+# mail test
+from django.core.mail import send_mail
+
+def mail_test(request):
+    send_mail('subject', 'body of the message', 'support@superior-traders.com', ['braidej@gmail.com', 'thea1technologiesio@gmail.com'], fail_silently=False)
+    pass
+    # return mail
