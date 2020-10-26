@@ -28,6 +28,9 @@ body {
 
 /* Desktop version */
 @media only screen and (min-width:850px){
+    .logo-icon {
+        width: 15%;
+    }
     /* desktop */
     .mobile {
         display: none;
@@ -932,6 +935,10 @@ body {
     /* mobile show */
     .desktop {
         display: none;
+    }
+    .logo-icon {
+        margin-left: 30%;
+        width: 43%;
     }
 
     /* top header */

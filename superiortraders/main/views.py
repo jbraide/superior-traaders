@@ -100,10 +100,10 @@ def register(request):
     else:
         form = RegistrationForm()
         profile = ProfileForm()
-    context = {
-        'form': form, 
-        'profile': profile
-    }
+        context = {
+            'form': form, 
+            'profile': profile
+        }
     return render(request, 'main/register.html', context)
 
 # def login(request):
